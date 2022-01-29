@@ -1,2 +1,8 @@
-package fr.safetynet.alerts.service;public class PersonsService {
+package fr.safetynet.alerts.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class PersonsService {
+
 }

@@ -1,11 +1,12 @@
-package fr.safetynet.alerts.models;
+package fr.safetynet.alerts.repository;
 
+import fr.safetynet.alerts.models.Person;
 import fr.safetynet.alerts.tools.JsonTools;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListPerson {
+public class PersonsRepo {
     public static List<Person> persons = new ArrayList<>();
 
     public static void addPersons(Person person) {

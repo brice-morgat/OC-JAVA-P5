@@ -7,7 +7,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class FireStations {
+public class FireStation {
     public String address;
     public Integer station;
 }

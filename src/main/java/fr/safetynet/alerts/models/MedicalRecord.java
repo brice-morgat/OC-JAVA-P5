@@ -7,7 +7,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class MedicalRecords {
+public class MedicalRecord {
     public String firstName;
     public String lastName;
     public String birthdate;
