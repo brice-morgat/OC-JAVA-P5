@@ -4,22 +4,14 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Setter
 @Getter
+@Setter
 @ToString
-public class Person {
+public class MedicalRecord {
     public String firstName;
-
     public String lastName;
+    public String birthdate;
 
-    public String email;
-
-    public String city;
-
-    public Integer zip;
-
-    public String address;
-
-    public String phone;
-
+    public String medications;
+    public String allergies;
 }
