@@ -21,5 +21,4 @@ public class Person {
     public String address;
 
     public String phone;
-
 }

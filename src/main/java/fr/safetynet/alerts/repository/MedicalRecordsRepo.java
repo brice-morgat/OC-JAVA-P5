@@ -8,28 +8,33 @@ import java.util.List;
 public class MedicalRecordsRepo {
     public static List<MedicalRecord> medicalRecords = new ArrayList<>();
 
-    public static void addMedicalRecord(MedicalRecord medicalRecord) {
+    public static MedicalRecord addMedicalRecord(MedicalRecord medicalRecord) {
         medicalRecords.add(medicalRecord);
+        return medicalRecord;
     }
 
-    public static void removeMedicalRecord(String firstName, String lastName) {
+    public static MedicalRecord deleteMedicalRecord(String firstName, String lastName) {
+        int i = 0;
         for (MedicalRecord medicalRecord : medicalRecords) {
-            if (medicalRecord.getFirstName() == firstName && medicalRecord.getLastName() == lastName) {
-                medicalRecords.remove(medicalRecord);
-                return;
+            if (medicalRecord.getFirstName().equals(firstName) && medicalRecord.getLastName().equals(lastName)) {
+                medicalRecords.remove(i);
+                return medicalRecord;
             }
+            i++;
         }
+        return null;
     }
 
-    public static void modifyMedicalRecord(MedicalRecord medicalRecord) {
+    public static MedicalRecord modifyMedicalRecord(MedicalRecord medicalRecord) {
         int i = 0;
         for (MedicalRecord medicalRecordEntity : medicalRecords) {
             if (medicalRecordEntity.getFirstName() == medicalRecordEntity.getFirstName() && medicalRecordEntity.getLastName() == medicalRecordEntity.getLastName()) {
                 medicalRecords.set(i, medicalRecord);
-                return;
+                return medicalRecord;
             }
             i++;
         }
+        return null;
     }
 
     public static MedicalRecord getMedicalRecordByName(String firstName, String lastName) {
