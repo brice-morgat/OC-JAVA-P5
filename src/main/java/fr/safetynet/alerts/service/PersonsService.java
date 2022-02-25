@@ -1,6 +1,7 @@
 package fr.safetynet.alerts.service;
 
 import com.jsoniter.output.JsonStream;
+import fr.safetynet.alerts.exceptions.InvalidStudentException;
 import fr.safetynet.alerts.models.Person;
 import fr.safetynet.alerts.repository.PersonsRepo;
 import org.json.simple.JSONObject;
@@ -19,6 +20,8 @@ public class PersonsService {
             Person result = PersonsRepo.addPersons(person);
             JSONParser parser = new JSONParser();
             personResult = (JSONObject) parser.parse(JsonStream.serialize(result));
+        } else {
+            
         }
         return personResult;
     }
