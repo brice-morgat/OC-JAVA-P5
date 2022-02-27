@@ -1,5 +1,6 @@
 package fr.safetynet.alerts.repository;
 
+import fr.safetynet.alerts.exceptions.NotFoundException;
 import fr.safetynet.alerts.models.Person;
 import fr.safetynet.alerts.tools.JsonTools;
 import org.springframework.stereotype.Component;
