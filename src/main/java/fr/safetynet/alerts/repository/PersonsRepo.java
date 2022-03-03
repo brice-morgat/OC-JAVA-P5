@@ -1,9 +1,6 @@
 package fr.safetynet.alerts.repository;
-
-import fr.safetynet.alerts.exceptions.NotFoundException;
 import fr.safetynet.alerts.models.Person;
-import fr.safetynet.alerts.tools.JsonTools;
-import org.springframework.stereotype.Component;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,12 +38,60 @@ public class PersonsRepo {
     }
 
     public static Person getPersonByName(String firstName, String lastName) {
-
         for (Person person : persons) {
             if (person.getFirstName().equals(firstName) && person.getLastName().equals(lastName)) {
                 return person;
             }
         }
         return null;
+    }
+
+    public static List<Person> getPersonsByCity(String city) {
+        List<Person> result = new ArrayList();
+        for (Person person : persons) {
+            if (person.getCity().equals(city)) {
+                result.add(person);
+            }
+        }
+        return result;
+    }
+
+
+    public static List<Person> getPersonsByName(String firstName, String lastName) {
+        List<Person> result = new ArrayList();
+        if (firstName != null) {
+            for (Person person : persons) {
+                if (person.getFirstName().equals(firstName) && person.getLastName().equals(lastName)) {
+                    result.add(person);
+                }
+            }
+        } else {
+            for (Person person : persons) {
+                if (person.getLastName().equals(lastName)) {
+                    result.add(person);
+                }
+            }
+        }
+        return result;
+    }
+
+    public static List<Person> getPersonsByAdresses(List addresses) {
+        List<Person> result = new ArrayList();
+        for (Person person : persons) {
+            if (addresses.contains(person.getAddress())) {
+                result.add(person);
+            }
+        }
+        return result;
+    }
+
+    public static List<Person> getPersonsByAddress(String address) {
+        List<Person> result = new ArrayList();
+        for (Person person : persons) {
+            if (person.getAddress().equals(address)) {
+                result.add(person);
+            }
+        }
+        return result;
     }
 }

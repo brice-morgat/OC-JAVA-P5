@@ -1,0 +1,128 @@
+2022-03-02 12:06:55 DEBUG PersonController:27 - Ajouter une personne
+2022-03-02 12:06:55 INFO  PersonController:31 - La personne a été ajouter : {"zip":97451,"firstName":"Brice","lastName":"Morgat","address":"1509 Culver St","phone":"841-874-6512","city":"Culver","email":"jaboyd@email.com"}
+2022-03-02 12:09:45 DEBUG PersonController:27 - Ajouter une personne
+2022-03-02 12:09:45 INFO  PersonController:31 - La personne a été ajouter : {"zip":97451,"lastName":"Morgat","firstName":"Brice","address":"1509 Culver St","phone":"841-874-6512","city":"Culver","email":"jaboyd@email.com"}
+2022-03-02 12:11:33 DEBUG PersonController:27 - Ajouter une personne
+2022-03-02 12:11:33 INFO  PersonController:31 - La personne a été ajouter : {"zip":97451,"firstName":"Brice","lastName":"Morgat","address":"1509 Culver St","city":"Culver","phone":"841-874-6512","email":"jaboyd@email.com"}
+2022-03-02 12:13:46 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:14:00 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:14:00 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:16:42 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:16:42 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:17:35 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:17:35 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:18:33 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:18:33 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:18:38 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:18:38 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:18:39 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:18:39 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:18:40 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:18:40 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:18:41 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:18:41 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:18:41 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:18:41 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:18:42 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:18:42 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:18:42 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:18:42 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:18:43 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:18:43 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:18:44 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:18:44 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:18:44 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:18:44 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:18:45 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:18:45 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:18:46 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:18:46 ERROR FireStationController:65 - Aucune station trouvé
+2022-03-02 12:18:47 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:18:47 ERROR FireStationController:65 - Aucune station trouvé
+2022-03-02 12:18:48 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:18:48 ERROR FireStationController:65 - Aucune station trouvé
+2022-03-02 12:19:29 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:19:29 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:19:35 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:19:35 ERROR FireStationController:65 - Aucune station trouvé
+2022-03-02 12:19:57 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:19:57 ERROR FireStationController:65 - Aucune station trouvé
+2022-03-02 12:20:00 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:20:00 ERROR FireStationController:65 - Aucune station trouvé
+2022-03-02 12:20:14 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:20:14 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:20:16 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:20:16 ERROR FireStationController:65 - Aucune station trouvé
+2022-03-02 12:20:40 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:20:40 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:20:41 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:20:41 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:20:45 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:20:45 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:20:48 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:20:48 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:20:49 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:20:49 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:20:55 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:20:55 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:20:57 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:20:57 ERROR FireStationController:65 - Aucune station trouvé
+2022-03-02 12:22:29 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:22:30 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:22:45 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:24:46 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:24:46 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:24:47 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:24:47 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:24:51 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:24:51 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:25:55 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:25:55 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:25:57 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:25:57 ERROR FireStationController:65 - Aucune station trouvé
+2022-03-02 12:26:31 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:26:31 INFO  FireStationController:60 - La station a bien été supprimé
+2022-03-02 12:32:05 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 12:32:05 ERROR FireStationController:65 - Aucune station trouvé
+2022-03-02 16:56:43 DEBUG PersonController:92 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-02 16:56:43 ERROR PersonController:99 - Aucune personne ne correspond à la ville
+2022-03-02 16:56:59 DEBUG PersonController:92 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-02 16:56:59 INFO  PersonController:96 - Liste d'email trouvé pour la ville : Culver
+2022-03-02 17:31:29 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-02 17:31:48 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-02 17:31:54 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-02 17:32:00 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-02 17:32:05 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-02 17:32:08 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-02 17:41:16 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-02 18:13:14 DEBUG PersonController:92 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-02 18:13:14 INFO  PersonController:96 - Liste d'email trouvé pour la ville : Culver
+2022-03-02 18:13:22 DEBUG PersonController:92 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-02 18:13:22 ERROR PersonController:99 - Aucune personne ne correspond à la ville
+2022-03-02 18:16:06 DEBUG PersonController:92 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-02 18:16:06 INFO  PersonController:96 - Liste d'email trouvé pour la ville : Culver
+2022-03-02 18:20:57 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-02 18:21:12 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-02 18:21:21 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-02 18:21:29 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-02 18:38:07 DEBUG PersonController:78 - GET information des personnes par nom
+2022-03-02 18:38:07 ERROR PersonController:85 - Aucune personne n'a été trouvé
+2022-03-02 18:38:37 DEBUG PersonController:78 - GET information des personnes par nom
+2022-03-02 18:38:37 INFO  PersonController:82 - Liste de personne trouvé au nom de Boyd null
+2022-03-02 18:39:49 DEBUG PersonController:78 - GET information des personnes par nom
+2022-03-02 18:39:49 ERROR PersonController:85 - Aucune personne n'a été trouvé
+2022-03-02 18:41:46 DEBUG PersonController:78 - GET information des personnes par nom
+2022-03-02 18:41:46 ERROR PersonController:85 - Aucune personne n'a été trouvé
+2022-03-02 18:41:47 DEBUG PersonController:78 - GET information des personnes par nom
+2022-03-02 18:41:47 ERROR PersonController:85 - Aucune personne n'a été trouvé
+2022-03-02 18:41:48 DEBUG PersonController:78 - GET information des personnes par nom
+2022-03-02 18:41:48 ERROR PersonController:85 - Aucune personne n'a été trouvé
+2022-03-02 18:43:15 DEBUG PersonController:78 - GET information des personnes par nom
+2022-03-02 18:43:15 ERROR PersonController:85 - Aucune personne n'a été trouvé
+2022-03-02 18:45:51 DEBUG PersonController:59 - Supprimer une personne : /person with body : Person(firstName=null, lastName=null, email=null, city=null, zip=null, address=null, phone=null)
+2022-03-02 18:45:51 ERROR PersonController:65 - Nom ou prénom invalide
+2022-03-02 18:48:07 DEBUG FireStationController:56 - Supprimer une station
+2022-03-02 18:48:07 ERROR FireStationController:65 - Aucune station trouvé
+2022-03-02 18:48:42 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-02 18:48:47 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-02 18:48:52 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
