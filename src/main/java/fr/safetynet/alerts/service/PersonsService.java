@@ -5,14 +5,18 @@ import fr.safetynet.alerts.exceptions.InvalidInputException;
 import fr.safetynet.alerts.exceptions.NotFoundException;
 import fr.safetynet.alerts.models.MedicalRecord;
 import fr.safetynet.alerts.models.Person;
+import fr.safetynet.alerts.repository.FireStationsRepo;
 import fr.safetynet.alerts.repository.MedicalRecordsRepo;
 import fr.safetynet.alerts.repository.PersonsRepo;
+import fr.safetynet.alerts.tools.CalculTools;
+import org.apache.log4j.Logger;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Service;
 
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
@@ -20,6 +24,8 @@ import java.util.List;
 
 @Service
 public class PersonsService {
+    private static Logger log = Logger.getLogger(PersonsService.class);
+
     public JSONObject addPerson(Person person) throws ParseException {
         //Parser le person pour vérifier que les champs soit valide
         if (person.firstName != null && person.lastName != null && person.address != null && person.city != null && person.zip != null && person.phone != null && person.email != null) {
@@ -72,7 +78,7 @@ public class PersonsService {
                 MedicalRecord personMedicalRecord =  MedicalRecordsRepo.getMedicalRecordByName(person.firstName, person.lastName);
                 personResult.put("lastName", person.lastName);
                 personResult.put("address", person.address);
-                personResult.put("age", ageParser(personMedicalRecord.birthdate));
+                personResult.put("age", CalculTools.ageParser(personMedicalRecord.birthdate));
                 personResult.put("email", person.email);
                 personResult.put("medications", personMedicalRecord.medications);
                 response.add(personResult);
@@ -102,32 +108,34 @@ public class PersonsService {
         }
     }
 
-    public JSONArray getChildByAddress(String address) {
-        JSONArray result = new JSONArray();
-        List<Person> persons = PersonsRepo.getPersonsByAddress(address);
-        for(Person person : persons) {
-            MedicalRecord personMedicalRecord = MedicalRecordsRepo.getMedicalRecordByName(person.firstName, person.lastName);
-            int age = ageParser(personMedicalRecord.birthdate);
+    public JSONObject getChildByAddress(String address) {
+        JSONObject response = new JSONObject();
+        JSONArray persons = new JSONArray();
+        int child = 0;
+        int stationNumber = FireStationsRepo.getFireStationNumberByAddress(address);
+        List<Person> personList = PersonsRepo.getPersonsByAddress(address);
+        response.put("station", stationNumber);
+        response.put("persons", persons);
+        for (Person person : personList) {
+            JSONObject entity = new JSONObject();
+            MedicalRecord personMedicalRecord =  MedicalRecordsRepo.getMedicalRecordByName(person.firstName, person.lastName);
+            entity.put("firstName", person.firstName);
+            entity.put("lastName", person.lastName);
+            entity.put("address", person.address);
+            entity.put("phone", person.phone);
+            int age = CalculTools.ageParser(personMedicalRecord.birthdate);
+            entity.put("age", age);
+            entity.put("medications", personMedicalRecord.medications);
+            entity.put("allergies", personMedicalRecord.allergies);
             if (age <= 18) {
-                JSONObject child = new JSONObject();
-                child.put("firstName", person.firstName);
-                child.put("lastName", person.lastName);
-                child.put("age", age);
+                child++;
             }
+            persons.add(entity);
         }
-        return result;
-    }
-
-    private int ageParser(String birthdate) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        try {
-            LocalDate localDate = LocalDate.parse(birthdate, formatter);
-            LocalDate now = LocalDate.now();
-            Period period = Period.between(localDate, now);
-            return period.getYears();
-        } catch (Exception e) {
-            throw 
+        if (child == 0) {
+            response.clear();
+            return response;
         }
-        return 0;
+        return response;
     }
 }

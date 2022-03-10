@@ -9,6 +9,7 @@ import fr.safetynet.alerts.models.Person;
 import fr.safetynet.alerts.repository.FireStationsRepo;
 import fr.safetynet.alerts.repository.MedicalRecordsRepo;
 import fr.safetynet.alerts.repository.PersonsRepo;
+import fr.safetynet.alerts.tools.CalculTools;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -18,7 +19,6 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -73,10 +73,12 @@ public class FireStationsService {
         }
     }
 
-    public JSONArray getPersonByStation(int station) {
-        JSONArray response = new JSONArray();
+    public JSONObject getPersonByStation(int station) {
+        JSONObject response = new JSONObject();
+        JSONArray personsList = new JSONArray();
         int adults = 0;
         int child = 0;
+        int age = 0;
         List addresses = FireStationsRepo.getListAddressByStationNumber(station);
         List<Person> persons = PersonsRepo.getPersonsByAdresses(addresses);
         for (Person person: persons) {
@@ -86,30 +88,40 @@ public class FireStationsService {
             personResult.put("lastName", person.lastName);
             personResult.put("address", person.address);
             personResult.put("phone", person.phone);
-            if (ageParser(personMedicalRecord.birthdate) >= 18) {
+            age = CalculTools.ageParser(personMedicalRecord.birthdate);
+            if (age >= 18 || age == -1) {
                 adults++;
             } else {
                 child++;
             }
-            response.add(personResult);
+            personsList.add(personResult);
         }
-        JSONObject counting = new JSONObject();
-        counting.put("childs", child);
-        counting.put("adults", adults);
-        response.add(counting);
+        response.put("childs", child);
+        response.put("adults", adults);
+        response.put("persons", personsList);
         return response;
     }
 
-    private int ageParser(String birthdate) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        try {
-            LocalDate localDate = LocalDate.parse(birthdate, formatter);
-            LocalDate now = LocalDate.now();
-            Period period = Period.between(localDate, now);
-            return period.getYears();
-        } catch (Exception e) {
-
+    public JSONObject getPersonByAddress(String address) {
+        JSONObject response = new JSONObject();
+        JSONArray persons = new JSONArray();
+        int stationNumber = FireStationsRepo.getFireStationNumberByAddress(address);
+        List<Person> personList = PersonsRepo.getPersonsByAddress(address);
+        response.put("station", stationNumber);
+        response.put("persons", persons);
+        for (Person person : personList) {
+            JSONObject entity = new JSONObject();
+            MedicalRecord personMedicalRecord =  MedicalRecordsRepo.getMedicalRecordByName(person.firstName, person.lastName);
+            entity.put("firstName", person.firstName);
+            entity.put("lastName", person.lastName);
+            entity.put("address", person.address);
+            entity.put("phone", person.phone);
+            int age = CalculTools.ageParser(personMedicalRecord.birthdate);
+            entity.put("age", age);
+            entity.put("medications", personMedicalRecord.medications);
+            entity.put("allergies", personMedicalRecord.allergies);
+            persons.add(entity);
         }
-        return 0;
+        return response;
     }
 }

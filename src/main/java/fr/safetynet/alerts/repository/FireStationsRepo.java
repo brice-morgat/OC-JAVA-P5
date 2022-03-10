@@ -69,6 +69,15 @@ public class FireStationsRepo {
         return fireStationToSearch;
     }
 
+    public static int getFireStationNumberByAddress(String address) {
+        for(FireStation fireStation: fireStations) {
+            if (fireStation.getAddress().equals(address)) {
+                return fireStation.getStation();
+            }
+        }
+        return 0;
+    }
+
     public static List getListAddressByStationNumber(int station_number) {
         List addresses = new ArrayList();
         for (FireStation fireStation: fireStations) {

@@ -102,4 +102,11 @@ public class PersonController {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
     }
+
+    @GetMapping("/childAlert")
+    public ResponseEntity getChildAlert(@RequestParam String address) {
+        JSONObject response;
+        response = personsService.getChildByAddress(address);
+        return new ResponseEntity(response, HttpStatus.OK);
+    }
 }

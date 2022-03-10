@@ -1,4 +1,5 @@
 package fr.safetynet.alerts.tools;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.safetynet.alerts.models.FireStation;
 import fr.safetynet.alerts.repository.FireStationsRepo;
 import fr.safetynet.alerts.repository.MedicalRecordsRepo;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 @Service
@@ -48,7 +50,7 @@ public class JsonTools {
     }
 
     @PostConstruct
-    private void parseFireStations() {
+    public void parseFireStations() {
         JSONParser parser = new JSONParser();
         try {
             Object obj = parser
@@ -72,7 +74,7 @@ public class JsonTools {
     }
 
     @PostConstruct
-    private void parseMedicalRecords() {
+    public void parseMedicalRecords() {
         JSONParser parser = new JSONParser();
         try {
             Object obj = parser
@@ -82,19 +84,31 @@ public class JsonTools {
             JSONArray medicalrecords = (JSONArray) jsonObject.get("medicalrecords");
 
             Iterator<JSONObject> iterator = medicalrecords.iterator();
+
             while (iterator.hasNext()) {
                 JSONObject medicalrecord = iterator.next();
                 MedicalRecord entityMedicalRecords = new MedicalRecord();
                 entityMedicalRecords.setFirstName(medicalrecord.get("firstName").toString());
                 entityMedicalRecords.setLastName(medicalrecord.get("lastName").toString());
                 entityMedicalRecords.setBirthdate(medicalrecord.get("birthdate").toString());
-                entityMedicalRecords.setAllergies(medicalrecord.get("allergies").toString());
-                entityMedicalRecords.setMedications(medicalrecord.get("medications").toString());
+                entityMedicalRecords.setAllergies(allergiesToList(medicalrecord.get("allergies").toString()));
+                entityMedicalRecords.setMedications(medicationsToList(medicalrecord.get("medications").toString()));
                 medicalRecordsRepo.medicalRecords.add(entityMedicalRecords);
             }
             System.out.println(medicalRecordsRepo.medicalRecords);
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public List<String> medicationsToList(String medications) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        List<String> result = mapper.readValue(medications.getBytes(), List.class);
+        return result;
+    }
+    public List<String> allergiesToList(String allergies) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        List<String> result = mapper.readValue(allergies.getBytes(), List.class);
+        return result;
     }
 }

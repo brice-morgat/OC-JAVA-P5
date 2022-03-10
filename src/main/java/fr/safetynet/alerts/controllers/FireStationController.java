@@ -71,12 +71,20 @@ public class FireStationController {
     @GetMapping("/firestation")
     public ResponseEntity getPersonByStation(@RequestParam int stationNumber) {
         log.info("Obtention de la liste des personnes couverte par une station");
-        JSONArray response;
+        JSONObject response;
         try {
             response = fireStationsService.getPersonByStation(stationNumber);
             return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
+    }
+
+    @GetMapping("/fire")
+    public ResponseEntity fireAddress(@RequestParam String address) {
+        JSONObject response;
+        response = fireStationsService.getPersonByAddress(address);
+
+        return new ResponseEntity(response, HttpStatus.OK);
     }
 }

@@ -126,3 +126,105 @@
 2022-03-02 18:48:42 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
 2022-03-02 18:48:47 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
 2022-03-02 18:48:52 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-04 21:15:35 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-04 21:18:54 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-04 21:18:54 ERROR PersonsService:134 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-04 21:18:54 ERROR PersonsService:134 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-04 21:18:54 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-04 21:28:01 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-04 21:28:01 ERROR PersonsService:134 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-04 21:28:01 ERROR PersonsService:134 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-04 21:28:01 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-04 21:29:02 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-04 21:29:02 ERROR PersonsService:134 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-04 21:29:02 ERROR PersonsService:134 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-04 21:29:02 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-04 21:29:27 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-04 21:33:08 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-04 21:33:24 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-04 21:33:29 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-04 21:34:08 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-04 21:34:13 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-06 23:39:06 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-06 23:39:06 ERROR PersonsService:134 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-06 23:39:06 ERROR PersonsService:134 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-06 23:39:06 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-07 00:19:45 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-07 00:19:45 ERROR PersonsService:134 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-07 00:19:45 ERROR PersonsService:134 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-07 00:19:45 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-07 00:19:53 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-07 00:19:53 ERROR PersonsService:134 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-07 00:19:53 ERROR PersonsService:134 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-07 00:19:53 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-07 00:20:44 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-07 00:20:44 ERROR PersonsService:134 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-07 00:20:44 ERROR PersonsService:134 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-07 00:20:44 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-09 18:26:23 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-09 18:26:23 ERROR PersonsService:133 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 18:26:23 ERROR PersonsService:133 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-09 18:26:23 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-09 18:26:54 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-09 18:26:54 ERROR PersonsService:133 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 18:26:54 ERROR PersonsService:133 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-09 18:26:54 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-09 18:42:47 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-09 18:42:47 ERROR PersonsService:133 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 18:42:47 ERROR PersonsService:133 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-09 18:42:47 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-09 18:43:17 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-09 18:43:17 ERROR PersonsService:133 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 18:43:17 ERROR PersonsService:133 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-09 18:43:17 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-09 18:44:05 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-09 18:44:05 ERROR PersonsService:133 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 18:44:05 ERROR PersonsService:133 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-09 18:44:05 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-09 18:44:13 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-09 18:44:13 ERROR PersonsService:133 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 18:44:13 ERROR PersonsService:133 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-09 18:44:13 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-09 18:51:28 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-09 21:12:39 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-09 21:12:39 ERROR PersonsService:133 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 21:12:39 ERROR PersonsService:133 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-09 21:12:39 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-09 21:13:15 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-09 21:13:15 ERROR PersonController:84 - Aucune personne n'a été trouvé
+2022-03-09 21:13:20 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-09 21:13:20 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd John
+2022-03-09 21:13:31 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-09 21:13:31 ERROR PersonsService:133 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 21:13:31 ERROR PersonsService:133 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-09 21:13:31 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-09 21:15:00 DEBUG PersonController:91 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-09 21:15:00 INFO  PersonController:95 - Liste d'email trouvé pour la ville : Culver
+2022-03-09 21:16:03 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-09 21:16:32 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-09 21:17:54 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-09 21:19:17 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-09 21:21:40 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-09 21:22:26 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-09 21:22:26 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 21:22:26 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 21:22:26 ERROR CalculTools:20 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-09 21:22:28 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-09 21:22:28 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 21:22:28 ERROR CalculTools:20 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-09 21:22:28 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-09 21:24:43 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 21:58:58 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-09 21:58:58 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 21:58:58 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 21:58:58 ERROR CalculTools:20 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-09 21:59:13 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 21:59:56 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-09 21:59:56 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 21:59:56 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 21:59:56 ERROR CalculTools:20 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-09 22:00:23 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-09 22:00:23 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 22:00:23 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-09 22:00:23 ERROR CalculTools:20 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-09 22:00:45 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18

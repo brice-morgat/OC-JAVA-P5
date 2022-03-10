@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
+
 @Getter
 @Setter
 @ToString
@@ -12,6 +14,7 @@ public class MedicalRecord {
     public String lastName;
     public String birthdate;
 
-    public String medications;
-    public String allergies;
+    public List<String> medications;
+    public List<String> allergies;
+
 }
