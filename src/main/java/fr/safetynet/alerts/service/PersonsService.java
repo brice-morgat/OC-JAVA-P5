@@ -111,27 +111,28 @@ public class PersonsService {
     public JSONObject getChildByAddress(String address) {
         JSONObject response = new JSONObject();
         JSONArray persons = new JSONArray();
+        JSONArray children = new JSONArray();
         int child = 0;
-        int stationNumber = FireStationsRepo.getFireStationNumberByAddress(address);
         List<Person> personList = PersonsRepo.getPersonsByAddress(address);
-        response.put("station", stationNumber);
-        response.put("persons", persons);
+
         for (Person person : personList) {
             JSONObject entity = new JSONObject();
             MedicalRecord personMedicalRecord =  MedicalRecordsRepo.getMedicalRecordByName(person.firstName, person.lastName);
             entity.put("firstName", person.firstName);
             entity.put("lastName", person.lastName);
-            entity.put("address", person.address);
-            entity.put("phone", person.phone);
             int age = CalculTools.ageParser(personMedicalRecord.birthdate);
+
             entity.put("age", age);
-            entity.put("medications", personMedicalRecord.medications);
-            entity.put("allergies", personMedicalRecord.allergies);
             if (age <= 18) {
+                children.add(entity);
                 child++;
+            } else {
+                persons.add(entity);
             }
-            persons.add(entity);
+
         }
+        response.put("other", persons);
+        response.put("children", children);
         if (child == 0) {
             response.clear();
             return response;

@@ -13,6 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @RestController
 public class FireStationController {
     private final FireStationsService fireStationsService;
@@ -86,5 +88,18 @@ public class FireStationController {
         response = fireStationsService.getPersonByAddress(address);
 
         return new ResponseEntity(response, HttpStatus.OK);
+    }
+
+    @GetMapping("/phoneAlert")
+    public ResponseEntity phoneAlert(@RequestParam int firestation) {
+        JSONArray response;
+        response = fireStationsService.getPhoneAlert(firestation);
+        return new ResponseEntity(response, HttpStatus.OK);
+    }
+
+    @GetMapping("/flood/stations")
+    public ResponseEntity floodStations(@RequestParam Integer[] stations) {
+        boolean test = stations[0].equals(1);
+        return new ResponseEntity(fireStationsService.getFloodStation(stations), HttpStatus.OK);
     }
 }

@@ -228,3 +228,52 @@
 2022-03-09 22:00:23 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
 2022-03-09 22:00:23 ERROR CalculTools:20 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
 2022-03-09 22:00:45 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-15 21:15:02 INFO  FireStationController:73 - Obtention de la liste des personnes couverte par une station
+2022-03-15 21:15:02 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-15 21:15:02 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-15 21:15:02 ERROR CalculTools:20 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-15 21:15:36 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-15 23:57:30 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-15 23:59:47 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-16 00:01:43 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-16 00:04:25 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-16 01:17:55 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-16 01:17:55 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-16 01:17:55 ERROR CalculTools:20 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-16 13:37:05 ERROR CalculTools:20 - La date n'est pas valide : Text '08/30/1979' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 30
+2022-03-16 13:37:05 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-16 13:37:05 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-16 13:37:05 ERROR CalculTools:20 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-16 15:18:04 ERROR CalculTools:20 - La date n'est pas valide : Text '08/30/1979' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 30
+2022-03-16 15:18:04 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-16 15:18:04 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-16 15:18:04 ERROR CalculTools:20 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-16 15:18:23 ERROR CalculTools:20 - La date n'est pas valide : Text '08/30/1979' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 30
+2022-03-16 15:18:36 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-16 15:18:36 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-16 15:18:36 ERROR CalculTools:20 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-16 15:18:57 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-16 15:18:57 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-16 15:18:57 ERROR CalculTools:20 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-16 16:43:37 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-16 16:43:37 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-16 16:44:10 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-16 16:44:10 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-16 16:44:29 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-16 16:44:29 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-16 16:45:26 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-16 16:45:26 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-16 16:49:27 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-16 16:49:27 INFO  PersonController:81 - Liste de personne trouvé au nom de Introuvable null
+2022-03-16 16:49:50 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-16 16:49:50 ERROR CalculTools:20 - La date n'est pas valide : Text '02/18/2012' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 18
+2022-03-16 16:49:50 ERROR CalculTools:20 - La date n'est pas valide : Text '03/15/1965' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 15
+2022-03-16 16:49:50 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null
+2022-03-16 16:49:55 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-16 16:49:55 ERROR PersonController:84 - Aucune personne n'a été trouvé
+2022-03-16 16:50:43 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-16 16:50:43 INFO  PersonController:81 - Liste de personne trouvé au nom de 23 null
+2022-03-16 16:50:57 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-16 16:50:57 ERROR PersonController:84 - Aucune personne n'a été trouvé
+2022-03-16 16:52:55 DEBUG PersonController:77 - GET information des personnes par nom
+2022-03-16 16:52:55 INFO  PersonController:81 - Liste de personne trouvé au nom de Boyd null

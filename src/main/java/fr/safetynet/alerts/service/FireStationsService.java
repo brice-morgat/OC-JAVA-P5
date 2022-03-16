@@ -19,6 +19,8 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -122,6 +124,47 @@ public class FireStationsService {
             entity.put("allergies", personMedicalRecord.allergies);
             persons.add(entity);
         }
+        return response;
+    }
+
+    public JSONArray getPhoneAlert(int station) {
+        JSONArray phoneList = new JSONArray();
+        List addresses = FireStationsRepo.getListAddressByStationNumber(station);
+        List<Person> persons = PersonsRepo.getPersonsByAdresses(addresses);
+        for (Person person: persons) {
+            if (!phoneList.contains(person.phone))
+                phoneList.add(person.phone);
+        }
+        return phoneList;
+    }
+
+    public JSONObject getFloodStation(Integer[] station) {
+        JSONObject response = new JSONObject();
+        JSONArray personsList = new JSONArray();
+        List<String> addresses = new ArrayList();
+        for (int i : station) {
+            addresses.addAll(FireStationsRepo.getListAddressByStationNumber(i));
+        }
+
+        for (String address : addresses) {
+            JSONArray personsArray = new JSONArray();
+            List<Person> personList = PersonsRepo.getPersonsByAddress(address.toString());
+            for (Person person : personList) {
+                JSONObject entity = new JSONObject();
+                MedicalRecord personMedicalRecord =  MedicalRecordsRepo.getMedicalRecordByName(person.firstName, person.lastName);
+                entity.put("firstName", person.firstName);
+                entity.put("lastName", person.lastName);
+                entity.put("address", person.address);
+                entity.put("phone", person.phone);
+                int age = CalculTools.ageParser(personMedicalRecord.birthdate);
+                entity.put("age", age);
+                entity.put("medications", personMedicalRecord.medications);
+                entity.put("allergies", personMedicalRecord.allergies);
+                personsArray.add(entity);
+            }
+            response.put(address, personsArray);
+        }
+
         return response;
     }
 }
