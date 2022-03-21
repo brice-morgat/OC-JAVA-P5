@@ -145,24 +145,25 @@ public class FireStationsService {
         for (int i : station) {
             addresses.addAll(FireStationsRepo.getListAddressByStationNumber(i));
         }
-
         for (String address : addresses) {
             JSONArray personsArray = new JSONArray();
-            List<Person> personList = PersonsRepo.getPersonsByAddress(address.toString());
-            for (Person person : personList) {
-                JSONObject entity = new JSONObject();
-                MedicalRecord personMedicalRecord =  MedicalRecordsRepo.getMedicalRecordByName(person.firstName, person.lastName);
-                entity.put("firstName", person.firstName);
-                entity.put("lastName", person.lastName);
-                entity.put("address", person.address);
-                entity.put("phone", person.phone);
-                int age = CalculTools.ageParser(personMedicalRecord.birthdate);
-                entity.put("age", age);
-                entity.put("medications", personMedicalRecord.medications);
-                entity.put("allergies", personMedicalRecord.allergies);
-                personsArray.add(entity);
+            if (response.get(address) == null) {
+                List<Person> personList = PersonsRepo.getPersonsByAddress(address);
+                for (Person person : personList) {
+                    JSONObject entity = new JSONObject();
+                    MedicalRecord personMedicalRecord =  MedicalRecordsRepo.getMedicalRecordByName(person.firstName, person.lastName);
+                    entity.put("firstName", person.firstName);
+                    entity.put("lastName", person.lastName);
+                    entity.put("address", person.address);
+                    entity.put("phone", person.phone);
+                    int age = CalculTools.ageParser(personMedicalRecord.birthdate);
+                    entity.put("age", age);
+                    entity.put("medications", personMedicalRecord.medications);
+                    entity.put("allergies", personMedicalRecord.allergies);
+                    personsArray.add(entity);
+                }
+                response.put(address, personsArray);
             }
-            response.put(address, personsArray);
         }
 
         return response;

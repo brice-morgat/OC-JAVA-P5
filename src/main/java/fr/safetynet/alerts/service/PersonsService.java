@@ -113,6 +113,7 @@ public class PersonsService {
         JSONArray persons = new JSONArray();
         JSONArray children = new JSONArray();
         int child = 0;
+
         List<Person> personList = PersonsRepo.getPersonsByAddress(address);
 
         for (Person person : personList) {
@@ -129,14 +130,14 @@ public class PersonsService {
             } else {
                 persons.add(entity);
             }
-
         }
-        response.put("other", persons);
-        response.put("children", children);
         if (child == 0) {
-            response.clear();
             return response;
         }
+
+        response.put("other", persons);
+        response.put("children", children);
+
         return response;
     }
 }

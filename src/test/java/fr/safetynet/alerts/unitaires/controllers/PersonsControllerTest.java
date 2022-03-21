@@ -1,9 +1,11 @@
 package fr.safetynet.alerts.unitaires.controllers;
 
 import fr.safetynet.alerts.controllers.PersonController;
+import fr.safetynet.alerts.exceptions.NotFoundException;
 import fr.safetynet.alerts.service.PersonsService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -33,6 +35,11 @@ public class PersonsControllerTest {
     public void testGetPersonInfoIsInvalid() throws Exception {
         mockMvc.perform(get("/personInfo")).andExpect(status().isBadRequest());
         mockMvc.perform(get("/personInfo?firstName=Blabla")).andExpect(status().isBadRequest());
+    }
 
+    @Test
+    public void testGetPersonInfoNotFound() throws Exception {
+        Mockito.when(personsService.getPersonsInfo(null, "Blabla")).thenThrow(NotFoundException.class);
+        mockMvc.perform(get("/personInfo?lastName=Blabla")).andExpect(status().isNotFound());
     }
 }
