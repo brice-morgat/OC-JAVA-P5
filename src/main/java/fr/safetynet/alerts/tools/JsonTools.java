@@ -23,7 +23,7 @@ public class JsonTools {
     MedicalRecordsRepo medicalRecordsRepo = new MedicalRecordsRepo();
 
     @PostConstruct
-    public void parsePerson() {
+    private void parsePerson() {
         JSONParser parser = new JSONParser();
         try {
             Object obj = parser
@@ -50,7 +50,7 @@ public class JsonTools {
     }
 
     @PostConstruct
-    public void parseFireStations() {
+    private void parseFireStations() {
         JSONParser parser = new JSONParser();
         try {
             Object obj = parser
@@ -74,7 +74,7 @@ public class JsonTools {
     }
 
     @PostConstruct
-    public void parseMedicalRecords() {
+    private void parseMedicalRecords() {
         JSONParser parser = new JSONParser();
         try {
             Object obj = parser
@@ -101,11 +101,12 @@ public class JsonTools {
         }
     }
 
-    public List<String> medicationsToList(String medications) throws IOException {
+    private List<String> medicationsToList(String medications) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         List<String> result = mapper.readValue(medications.getBytes(), List.class);
         return result;
     }
+
     public List<String> allergiesToList(String allergies) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         List<String> result = mapper.readValue(allergies.getBytes(), List.class);

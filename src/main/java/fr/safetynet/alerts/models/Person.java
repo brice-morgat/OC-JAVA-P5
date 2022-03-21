@@ -1,5 +1,6 @@
 package fr.safetynet.alerts.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -21,6 +22,4 @@ public class Person {
     public String address;
 
     public String phone;
-
-
 }

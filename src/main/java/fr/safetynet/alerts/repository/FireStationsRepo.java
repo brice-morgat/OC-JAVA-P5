@@ -1,6 +1,8 @@
 package fr.safetynet.alerts.repository;
 
+import fr.safetynet.alerts.controllers.FireStationController;
 import fr.safetynet.alerts.models.FireStation;
+import org.apache.log4j.Logger;
 import org.json.simple.JSONArray;
 
 import java.util.ArrayList;
@@ -9,6 +11,8 @@ import java.util.List;
 
 public class FireStationsRepo {
     public static List<FireStation> fireStations = new ArrayList<>();
+    private static Logger log = Logger.getLogger(FireStationsRepo.class);
+
 
     public static FireStation addFireStation(FireStation fireStation) {
         fireStations.add(fireStation);
@@ -59,14 +63,12 @@ public class FireStationsRepo {
     }
 
     public static FireStation getFireStationByNumber(int station) {
-        FireStation fireStationToSearch = new FireStation();
-        fireStationToSearch.setStation(station);
         for (FireStation fireStation : fireStations) {
             if (fireStation.getStation().equals(station)) {
                 return fireStation;
             }
         }
-        return fireStationToSearch;
+        return null;
     }
 
     public static int getFireStationNumberByAddress(String address) {
@@ -85,6 +87,7 @@ public class FireStationsRepo {
                 addresses.add(fireStation.address);
             }
         }
+        log.info(addresses);
         return addresses;
     }
 }
