@@ -16,7 +16,7 @@ public class PersonsRepo {
     public static Person modifyPerson(Person person) {
         int i = 0;
         for (Person personEntity : persons) {
-            if (personEntity.getFirstName() == person.getFirstName() && personEntity.getLastName() == person.getLastName()) {
+            if (personEntity.getFirstName().equals(person.getFirstName()) && personEntity.getLastName().equals(person.getLastName())) {
                 persons.set(i, person);
                 return person;
             }

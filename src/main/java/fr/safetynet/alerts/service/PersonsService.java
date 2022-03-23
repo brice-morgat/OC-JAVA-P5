@@ -39,8 +39,8 @@ public class PersonsService {
     }
 
     public JSONObject modifyPerson(Person person) throws ParseException {
-        Person result = PersonsRepo.modifyPerson(person);
         if (person.firstName != null && person.lastName != null && person.address != null && person.city != null && person.zip != null && person.phone != null && person.email != null) {
+            Person result = PersonsRepo.modifyPerson(person);
             if (result != null) {
                 JSONParser parser = new JSONParser();
                 JSONObject personResult = (JSONObject) parser.parse(JsonStream.serialize(result));
@@ -90,14 +90,13 @@ public class PersonsService {
     }
 
     public JSONArray getCommunityEmail(String city) {
-        if (city != null) {
+        if (city != null && !city.equals("")) {
             JSONArray response = new JSONArray();
             List<Person> persons = PersonsRepo.getPersonsByCity(city);
             if (!persons.isEmpty()) {
                 for (Person person: persons) {
-                    JSONObject personResult = new JSONObject();
-                    personResult.put("email", person.email);
-                    response.add(personResult);
+                    if (!response.contains(person.email))
+                        response.add(person.email);
                 }
                 return response;
             } else {
