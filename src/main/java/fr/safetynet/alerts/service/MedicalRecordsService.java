@@ -24,8 +24,8 @@ public class MedicalRecordsService {
     }
 
     public JSONObject modifyMedicalRecord(MedicalRecord medicalRecord) throws ParseException {
-        MedicalRecord result = MedicalRecordsRepo.modifyMedicalRecord(medicalRecord);
         if (medicalRecord.firstName != null && medicalRecord.lastName != null && medicalRecord.birthdate != null && medicalRecord.medications != null && medicalRecord.allergies != null) {
+            MedicalRecord result = MedicalRecordsRepo.modifyMedicalRecord(medicalRecord);
             if (result != null) {
                 JSONParser parser = new JSONParser();
                 JSONObject medicalRecordResult = (JSONObject) parser.parse(JsonStream.serialize(result));

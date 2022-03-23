@@ -29,7 +29,7 @@ public class MedicalRecordsRepo {
     public static MedicalRecord modifyMedicalRecord(MedicalRecord medicalRecord) {
         int i = 0;
         for (MedicalRecord medicalRecordEntity : medicalRecords) {
-            if (medicalRecordEntity.getFirstName() == medicalRecordEntity.getFirstName() && medicalRecordEntity.getLastName() == medicalRecordEntity.getLastName()) {
+            if (medicalRecordEntity.getFirstName().equals(medicalRecord.getFirstName()) && medicalRecordEntity.getLastName().equals(medicalRecord.getLastName())) {
                 medicalRecords.set(i, medicalRecord);
                 return medicalRecord;
             }
