@@ -1,5 +1,6 @@
 package fr.safetynet.alerts.controllers;
 
+import fr.safetynet.alerts.exceptions.AlreadyExistException;
 import fr.safetynet.alerts.exceptions.InvalidInputException;
 import fr.safetynet.alerts.exceptions.NotFoundException;
 import fr.safetynet.alerts.models.Person;
@@ -31,6 +32,9 @@ public class PersonController {
             log.info("La personne a été ajouté");
 
         } catch (InvalidInputException e) {
+            log.error(e.getMessage());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        }  catch (AlreadyExistException e) {
             log.error(e.getMessage());
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
@@ -105,8 +109,15 @@ public class PersonController {
 
     @GetMapping("/childAlert")
     public ResponseEntity getChildAlert(@RequestParam String address) {
+        log.debug("Obtention de la liste des enfants habitants à l'adresse.");
         JSONObject response;
-        response = personsService.getChildByAddress(address);
-        return new ResponseEntity(response, HttpStatus.OK);
+        try {
+            response = personsService.getChildByAddress(address);
+            log.info("Résultat trouvé pour /childAlert");
+            return new ResponseEntity(response, HttpStatus.OK);
+        } catch (NotFoundException e) {
+            log.error(e.getMessage());
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+        }
     }
 }

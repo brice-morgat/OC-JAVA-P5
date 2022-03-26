@@ -2,6 +2,7 @@ package fr.safetynet.alerts.repository;
 
 import fr.safetynet.alerts.controllers.FireStationController;
 import fr.safetynet.alerts.models.FireStation;
+import fr.safetynet.alerts.models.Person;
 import org.apache.log4j.Logger;
 import org.json.simple.JSONArray;
 
@@ -30,7 +31,9 @@ public class FireStationsRepo {
                     it.remove();
                 }
             }
-            return listDeletedFireStation;
+            if(!listDeletedFireStation.isEmpty()){
+                return listDeletedFireStation;
+            }
         } else {
             for (Iterator<FireStation> it = fireStations.iterator(); it.hasNext();) {
                 FireStation fireStationEntity = it.next();
@@ -58,15 +61,6 @@ public class FireStationsRepo {
                 return fireStation;
             }
             i++;
-        }
-        return null;
-    }
-
-    public static FireStation getFireStationByNumber(int station) {
-        for (FireStation fireStation : fireStations) {
-            if (fireStation.getStation().equals(station)) {
-                return fireStation;
-            }
         }
         return null;
     }

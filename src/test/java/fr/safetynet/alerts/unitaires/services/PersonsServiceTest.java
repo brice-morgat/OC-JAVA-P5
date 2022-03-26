@@ -1,28 +1,17 @@
 package fr.safetynet.alerts.unitaires.services;
 
+import fr.safetynet.alerts.exceptions.AlreadyExistException;
 import fr.safetynet.alerts.exceptions.InvalidInputException;
 import fr.safetynet.alerts.exceptions.NotFoundException;
 import fr.safetynet.alerts.models.Person;
-import fr.safetynet.alerts.repository.PersonsRepo;
 import fr.safetynet.alerts.service.PersonsService;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.function.Executable;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.junit4.SpringRunner;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -35,6 +24,12 @@ public class PersonsServiceTest {
 
     @Test
     public void getPersonInfoTest() {
+        JSONArray persons = personsService.getPersonsInfo("John", "Boyd");
+        assertTrue(persons != null);
+    }
+
+    @Test
+    public void getPersonInfoOnlyLastNameTest() {
         JSONArray persons = personsService.getPersonsInfo(null, "Boyd");
         assertTrue(persons != null);
     }
@@ -58,6 +53,49 @@ public class PersonsServiceTest {
         assertEquals(result.get("firstName"), person.firstName);
         assertEquals(result.get("lastName"), person.lastName);
     }
+
+    @Test
+    public void addPersonAlreadyExistTest() throws ParseException {
+        Person person = new Person();
+        person.setFirstName("Already");
+        person.setLastName("Exist");
+        person.setAddress("address");
+        person.setEmail("email@email.com");
+        person.setPhone("0787475144");
+        person.setZip(232232);
+        person.setCity("Culver");
+        JSONObject result = personsService.addPerson(person);
+        assertEquals(result.get("firstName"), person.firstName);
+        assertEquals(result.get("lastName"), person.lastName);
+        assertThrows(AlreadyExistException.class, () -> personsService.addPerson(person));
+    }
+
+    @Test
+    public void alreadyExistWithFirstNameTest() {
+        Person person = new Person();
+        person.setFirstName("John");
+        person.setLastName("Unknown");
+        person.setAddress("address");
+        person.setEmail("email@email.com");
+        person.setPhone("0787475144");
+        person.setZip(232232);
+        person.setCity("Culver");
+        assertFalse(personsService.alreadyExist(person));
+    }
+
+    @Test
+    public void alreadyExistWithLastNameTest() {
+        Person person = new Person();
+        person.setFirstName("Unknown");
+        person.setLastName("Boyd");
+        person.setAddress("address");
+        person.setEmail("email@email.com");
+        person.setPhone("0787475144");
+        person.setZip(232232);
+        person.setCity("Culver");
+        assertFalse(personsService.alreadyExist(person));
+    }
+
 
     @Test
     public void addPersonWithoutFirstNameTest() {
@@ -332,8 +370,22 @@ public class PersonsServiceTest {
     }
 
     @Test
-    public void getChildByAddressNoChildTest() {
-        JSONObject result = personsService.getChildByAddress("dkfhklsjh");
+    public void getChildByAddressNoChildTest() throws ParseException {
+        Person adult = new Person();
+        adult.setLastName("Nom");
+        adult.setFirstName("Prénom");
+        adult.setAddress("Avenue général");
+        adult.setCity("Toulon");
+        adult.setZip(83000);
+        adult.setPhone("841-874-6512");
+        adult.setEmail("jayboyd@email.com");
+        personsService.addPerson(adult);
+        JSONObject result = personsService.getChildByAddress("Avenue général");
         assertTrue(result.isEmpty());
+    }
+
+    @Test
+    public void getChildByAddressNotFoundTest() throws ParseException {
+        assertThrows(NotFoundException.class, () -> personsService.getChildByAddress("Unknown"));
     }
 }

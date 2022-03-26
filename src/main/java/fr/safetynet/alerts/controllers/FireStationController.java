@@ -1,5 +1,6 @@
 package fr.safetynet.alerts.controllers;
 
+import fr.safetynet.alerts.exceptions.AlreadyExistException;
 import fr.safetynet.alerts.exceptions.InvalidInputException;
 import fr.safetynet.alerts.exceptions.NotFoundException;
 import fr.safetynet.alerts.models.FireStation;
@@ -31,7 +32,7 @@ public class FireStationController {
         try {
             response = fireStationsService.addFireStation(fireStation);
             log.info("La station a bien été ajouté : " + response.toString());
-        } catch (InvalidInputException e) {
+        } catch (InvalidInputException | AlreadyExistException e) {
             log.error(e.getMessage());
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST ,e.getMessage());
         }
@@ -60,7 +61,7 @@ public class FireStationController {
         try {
             response =  fireStationsService.deleteFireStation(fireStation);
             log.info("La station a bien été supprimé");
-        } catch (InvalidInputException e) {
+        } catch (InvalidInputException e ) {
             log.error(e.getMessage());
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,e.getMessage());
         } catch (NotFoundException e) {
@@ -72,34 +73,59 @@ public class FireStationController {
 
     @GetMapping("/firestation")
     public ResponseEntity getPersonByStation(@RequestParam int stationNumber) {
-        log.info("Obtention de la liste des personnes couverte par une station");
+        log.debug("Obtention de la liste des personnes couverte par une station");
         JSONObject response;
         try {
             response = fireStationsService.getPersonByStation(stationNumber);
+            log.info("La station a bien été supprimé");
             return new ResponseEntity(response, HttpStatus.OK);
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        } catch (NotFoundException e) {
+            log.error(e.getMessage());
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }
     }
 
     @GetMapping("/fire")
     public ResponseEntity fireAddress(@RequestParam String address) {
+        log.debug("Obtention de la liste des personnes vivant à l'adresse indiqué.");
         JSONObject response;
-        response = fireStationsService.getPersonByAddress(address);
-
-        return new ResponseEntity(response, HttpStatus.OK);
+        try {
+            response = fireStationsService.getPersonByAddress(address);
+            log.info("Liste trouvé pour /fire?address=" + address);
+            return new ResponseEntity(response, HttpStatus.OK);
+        } catch (NotFoundException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+        }
     }
 
     @GetMapping("/phoneAlert")
     public ResponseEntity phoneAlert(@RequestParam int firestation) {
+        log.debug("Obtention de la liste des numéros téléphone couvert par la station indiqué.");
         JSONArray response;
-        response = fireStationsService.getPhoneAlert(firestation);
-        return new ResponseEntity(response, HttpStatus.OK);
+        try {
+            response = fireStationsService.getPhoneAlert(firestation);
+            log.info("Liste trouvé pour /phoneAlert?firestation=" + firestation);
+            return new ResponseEntity(response, HttpStatus.OK);
+        } catch (NotFoundException e) {
+            log.error(e.getMessage());
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+        }
     }
 
     @GetMapping("/flood/stations")
     public ResponseEntity floodStations(@RequestParam Integer[] stations) {
-        boolean test = stations[0].equals(1);
-        return new ResponseEntity(fireStationsService.getFloodStation(stations), HttpStatus.OK);
+        log.debug("Obtention de la liste des membres de chaque foyers desservies par une caserne donnée.");
+        JSONObject response;
+        try {
+            response = fireStationsService.getFloodStation(stations);
+            log.info("Listes des foyers obtenues pour /flood/stations?stations");
+            return new ResponseEntity(response, HttpStatus.OK);
+        } catch (NotFoundException e) {
+            log.error(e.getMessage());
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+        } catch (InvalidInputException e) {
+            log.error(e.getMessage());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        }
     }
 }

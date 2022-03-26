@@ -37,15 +37,6 @@ public class PersonsRepo {
         return null;
     }
 
-    public static Person getPersonByName(String firstName, String lastName) {
-        for (Person person : persons) {
-            if (person.getFirstName().equals(firstName) && person.getLastName().equals(lastName)) {
-                return person;
-            }
-        }
-        return null;
-    }
-
     public static List<Person> getPersonsByCity(String city) {
         List<Person> result = new ArrayList();
         for (Person person : persons) {
@@ -55,7 +46,6 @@ public class PersonsRepo {
         }
         return result;
     }
-
 
     public static List<Person> getPersonsByName(String firstName, String lastName) {
         List<Person> result = new ArrayList();

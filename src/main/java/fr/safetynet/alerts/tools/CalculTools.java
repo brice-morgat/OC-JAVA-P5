@@ -17,7 +17,6 @@ public class CalculTools {
             localDate = LocalDate.parse(birthdate, formatter);
 
         } catch (DateTimeException e) {
-            log.error("La date n'est pas valide : " + e.getMessage());
 //            int date = Integer.parseInt(birthdate.split("/")[2]);
 //            LocalDate now = LocalDate.now();
 //            return now.getYear() - date;

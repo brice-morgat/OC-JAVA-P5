@@ -6,6 +6,9 @@ import fr.safetynet.alerts.repository.MedicalRecordsRepo;
 import fr.safetynet.alerts.repository.PersonsRepo;
 import fr.safetynet.alerts.models.MedicalRecord;
 import fr.safetynet.alerts.models.Person;
+import fr.safetynet.alerts.service.FireStationsService;
+import fr.safetynet.alerts.service.MedicalRecordsService;
+import fr.safetynet.alerts.service.PersonsService;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -21,6 +24,17 @@ public class JsonTools {
     PersonsRepo personsRepo = new PersonsRepo();
     FireStationsRepo fireStationsRepo = new FireStationsRepo();
     MedicalRecordsRepo medicalRecordsRepo = new MedicalRecordsRepo();
+
+    private final FireStationsService fireStationsService;
+    private final MedicalRecordsService medicalRecordsService;
+    private final PersonsService personsService;
+
+    public JsonTools(FireStationsService fireStationsService, MedicalRecordsService medicalRecordsService, PersonsService personsService) {
+        this.fireStationsService = fireStationsService;
+        this.medicalRecordsService = medicalRecordsService;
+        this.personsService = personsService;
+    }
+
 
     @PostConstruct
     private void parsePerson() {
@@ -41,7 +55,9 @@ public class JsonTools {
                 entityPerson.setAddress(person.get("address").toString());
                 entityPerson.setCity(person.get("city").toString());
                 entityPerson.setPhone(person.get("phone").toString());
-                personsRepo.persons.add(entityPerson);
+                if(!personsService.alreadyExist(entityPerson)) {
+                    personsRepo.persons.add(entityPerson);
+                }
             }
             System.out.println(personsRepo.persons);
         } catch (Exception e) {
@@ -65,7 +81,9 @@ public class JsonTools {
                 FireStation entityFireStation = new FireStation();
                 entityFireStation.setAddress(firestation.get("address").toString());
                 entityFireStation.setStation(Integer.parseInt(firestation.get("station").toString()));
-                fireStationsRepo.fireStations.add(entityFireStation);
+                if(!fireStationsService.alreadyExist(entityFireStation)) {
+                    fireStationsRepo.fireStations.add(entityFireStation);
+                }
             }
            System.out.println(fireStationsRepo.fireStations);
         } catch (Exception e) {
@@ -93,7 +111,9 @@ public class JsonTools {
                 entityMedicalRecords.setBirthdate(medicalrecord.get("birthdate").toString());
                 entityMedicalRecords.setAllergies(allergiesToList(medicalrecord.get("allergies").toString()));
                 entityMedicalRecords.setMedications(medicationsToList(medicalrecord.get("medications").toString()));
-                medicalRecordsRepo.medicalRecords.add(entityMedicalRecords);
+                if(!medicalRecordsService.alreadyExist(entityMedicalRecords)) {
+                    medicalRecordsRepo.medicalRecords.add(entityMedicalRecords);
+                }
             }
             System.out.println(medicalRecordsRepo.medicalRecords);
         } catch (Exception e) {

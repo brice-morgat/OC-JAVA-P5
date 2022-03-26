@@ -1,6 +1,7 @@
 package fr.safetynet.alerts.service;
 
 import com.jsoniter.output.JsonStream;
+import fr.safetynet.alerts.exceptions.AlreadyExistException;
 import fr.safetynet.alerts.exceptions.InvalidInputException;
 import fr.safetynet.alerts.exceptions.NotFoundException;
 import fr.safetynet.alerts.models.MedicalRecord;
@@ -14,10 +15,14 @@ import org.springframework.stereotype.Service;
 public class MedicalRecordsService {
     public JSONObject addMedicalRecord(MedicalRecord medicalRecord) throws ParseException {
         if (medicalRecord.firstName != null && medicalRecord.lastName != null && medicalRecord.birthdate != null && medicalRecord.medications != null && medicalRecord.allergies != null) {
-            MedicalRecord result = MedicalRecordsRepo.addMedicalRecord(medicalRecord);
-            JSONParser parser = new JSONParser();
-            JSONObject medicalRecordResult = (JSONObject) parser.parse(JsonStream.serialize(result));
-            return medicalRecordResult;
+            if (!alreadyExist(medicalRecord)) {
+                MedicalRecord result = MedicalRecordsRepo.addMedicalRecord(medicalRecord);
+                JSONParser parser = new JSONParser();
+                JSONObject medicalRecordResult = (JSONObject) parser.parse(JsonStream.serialize(result));
+                return medicalRecordResult;
+            } else {
+                throw new AlreadyExistException("Le dossier médical existe déjà pour " + medicalRecord.getFirstName() + " " + medicalRecord.getLastName());
+            }
         } else {
             throw new InvalidInputException("Dossier médical non valide, il manque des informations");
         }
@@ -51,5 +56,16 @@ public class MedicalRecordsService {
         } else {
             throw new InvalidInputException("Nom ou prénom invalide");
         }
+    }
+
+    public boolean alreadyExist(MedicalRecord medicalRecord) {
+        int i = 0;
+        for (MedicalRecord entity : MedicalRecordsRepo.medicalRecords) {
+            if (entity.getFirstName().equals(medicalRecord.firstName) && entity.getLastName().equals(medicalRecord.lastName)) {
+                return true;
+            }
+            i++;
+        }
+        return false;
     }
 }

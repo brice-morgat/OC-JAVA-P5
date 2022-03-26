@@ -1,6 +1,7 @@
 package fr.safetynet.alerts.service;
 
 import com.jsoniter.output.JsonStream;
+import fr.safetynet.alerts.exceptions.AlreadyExistException;
 import fr.safetynet.alerts.exceptions.InvalidInputException;
 import fr.safetynet.alerts.exceptions.NotFoundException;
 import fr.safetynet.alerts.models.MedicalRecord;
@@ -29,10 +30,14 @@ public class PersonsService {
     public JSONObject addPerson(Person person) throws ParseException {
         //Parser le person pour vérifier que les champs soit valide
         if (person.firstName != null && person.lastName != null && person.address != null && person.city != null && person.zip != null && person.phone != null && person.email != null) {
-            Person result = PersonsRepo.addPersons(person);
-            JSONParser parser = new JSONParser();
-            JSONObject personResult = (JSONObject) parser.parse(JsonStream.serialize(result));
-            return personResult;
+            if(!alreadyExist(person)) {
+                Person result = PersonsRepo.addPersons(person);
+                JSONParser parser = new JSONParser();
+                JSONObject personResult = (JSONObject) parser.parse(JsonStream.serialize(result));
+                return personResult;
+            } else {
+                throw new AlreadyExistException("Cette personne existe déjà." );
+             }
         } else {
             throw new InvalidInputException("Personne non valide, il manque des informations");
         }
@@ -114,29 +119,45 @@ public class PersonsService {
         int child = 0;
 
         List<Person> personList = PersonsRepo.getPersonsByAddress(address);
-
-        for (Person person : personList) {
-            JSONObject entity = new JSONObject();
-            MedicalRecord personMedicalRecord =  MedicalRecordsRepo.getMedicalRecordByName(person.firstName, person.lastName);
-            entity.put("firstName", person.firstName);
-            entity.put("lastName", person.lastName);
-            int age = CalculTools.ageParser(personMedicalRecord.birthdate);
-
-            entity.put("age", age);
-            if (age <= 18) {
-                children.add(entity);
-                child++;
-            } else {
-                persons.add(entity);
+        if (!personList.isEmpty()) {
+            for (Person person : personList) {
+                JSONObject entity = new JSONObject();
+                MedicalRecord personMedicalRecord =  MedicalRecordsRepo.getMedicalRecordByName(person.firstName, person.lastName);
+                entity.put("firstName", person.firstName);
+                entity.put("lastName", person.lastName);
+                int age = 100;
+                if (personMedicalRecord.getFirstName() != null) {
+                    age = CalculTools.ageParser(personMedicalRecord.birthdate);
+                }
+                entity.put("age", age);
+                if (age <= 18) {
+                    children.add(entity);
+                    child++;
+                } else {
+                    persons.add(entity);
+                }
             }
-        }
-        if (child == 0) {
+            if (child == 0) {
+                return response;
+            }
+
+            response.put("other", persons);
+            response.put("children", children);
+
             return response;
+        } else {
+            throw new NotFoundException("Aucune personne n'a été trouvé.");
         }
+    }
 
-        response.put("other", persons);
-        response.put("children", children);
-
-        return response;
+    public boolean alreadyExist(Person person) {
+        int i = 0;
+        for (Person entity : PersonsRepo.persons) {
+            if (entity.getFirstName().equals(person.firstName) && entity.getLastName().equals(person.lastName)) {
+                return true;
+            }
+            i++;
+        }
+        return false;
     }
 }

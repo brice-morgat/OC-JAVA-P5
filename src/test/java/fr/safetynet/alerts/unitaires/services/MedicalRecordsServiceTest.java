@@ -1,9 +1,10 @@
 package fr.safetynet.alerts.unitaires.services;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import fr.safetynet.alerts.exceptions.AlreadyExistException;
 import fr.safetynet.alerts.exceptions.InvalidInputException;
 import fr.safetynet.alerts.exceptions.NotFoundException;
 import fr.safetynet.alerts.models.MedicalRecord;
+import fr.safetynet.alerts.repository.MedicalRecordsRepo;
 import fr.safetynet.alerts.service.MedicalRecordsService;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
@@ -13,11 +14,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.io.IOException;
 
 @SpringBootTest
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
@@ -37,6 +35,43 @@ public class MedicalRecordsServiceTest {
         assertTrue(!result.isEmpty());
         assertEquals(result.get("firstName"), "Firstname");
         assertEquals(result.get("allergies").toString(), "[]");
+    }
+
+    @Test
+    public void addMedicalRecordAlreadyExistTest() throws ParseException {
+        MedicalRecord input = new MedicalRecord();
+        input.setFirstName("Already");
+        input.setLastName("Exist");
+        input.setBirthdate("01/12/2001");
+        input.setMedications(new ArrayList());
+        input.setAllergies(new ArrayList());
+        JSONObject result = medicalRecordsService.addMedicalRecord(input);
+        assertTrue(!result.isEmpty());
+        assertEquals(result.get("firstName"), "Already");
+        assertEquals(result.get("allergies").toString(), "[]");
+        assertThrows(AlreadyExistException.class, () -> medicalRecordsService.addMedicalRecord(input));
+    }
+
+    @Test
+    public void alreadyExistWithFirstNameTest()   {
+        MedicalRecord input = new MedicalRecord();
+        input.setFirstName("John");
+        input.setLastName("Unknown");
+        input.setBirthdate("01/12/2001");
+        input.setMedications(new ArrayList());
+        input.setAllergies(new ArrayList());
+        assertFalse(medicalRecordsService.alreadyExist(input));
+    }
+
+    @Test
+    public void alreadyExistWithLastNameTest()   {
+        MedicalRecord input = new MedicalRecord();
+        input.setFirstName("Unknown");
+        input.setLastName("Boyd");
+        input.setBirthdate("01/12/2001");
+        input.setMedications(new ArrayList());
+        input.setAllergies(new ArrayList());
+        assertFalse(medicalRecordsService.alreadyExist(input));
     }
 
     @Test
@@ -208,4 +243,13 @@ public class MedicalRecordsServiceTest {
         input.setAllergies(new ArrayList());
         assertThrows(NotFoundException.class, () -> medicalRecordsService.deleteMedicalRecord(input));
     }
+
+    @Test
+    public void getMedicalRecordByNameEmpty() {
+        MedicalRecord result = MedicalRecordsRepo.getMedicalRecordByName("Unknown", "Unknown");
+        assertEquals(result.toString(), new MedicalRecord().toString());
+        assertTrue(result.getFirstName() == null);
+    }
 }
+
+
