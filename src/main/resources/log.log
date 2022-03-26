@@ -3277,3 +3277,881 @@
 2022-03-26 15:58:18 INFO  FireStationsRepo:84 - [29 15th St, 892 Downing Ct, 951 LoneTree Rd]
 2022-03-26 15:58:18 INFO  FireStationsRepo:84 - [834 Binoc Ave, 748 Townings Dr, 112 Steppes Pl, 1509 Culver St]
 2022-03-26 15:58:18 INFO  FireStationsRepo:84 - [489 Manchester St, 112 Steppes Pl]
+2022-03-26 16:20:40 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:22:32 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:22:32 INFO  FireStationController:34 - La station a bien été ajouter
+2022-03-26 16:23:32 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:23:32 ERROR FireStationController:36 - 
+2022-03-26 16:23:59 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:23:59 ERROR FireStationController:36 - 
+2022-03-26 16:24:35 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:24:35 INFO  FireStationController:48 - La station a bien été modifier
+2022-03-26 16:25:56 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:25:56 INFO  FireStationController:48 - La station a bien été modifier
+2022-03-26 16:26:16 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:26:22 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:26:29 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:27:56 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:27:56 ERROR FireStationController:65 - 
+2022-03-26 16:28:38 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:28:38 ERROR FireStationController:68 - 
+2022-03-26 16:28:45 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:28:45 ERROR FireStationController:68 - 
+2022-03-26 16:30:19 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant à l'adresse indiqué.
+2022-03-26 16:30:19 INFO  FireStationController:94 - Liste trouvé pour /fire?address=
+2022-03-26 16:31:07 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant à l'adresse indiqué.
+2022-03-26 16:32:12 DEBUG FireStationController:103 - Obtention de la liste des numéros téléphone couvert par la station indiqué.
+2022-03-26 16:32:12 INFO  FireStationController:107 - Liste trouvé pour /phoneAlert?firestation=
+2022-03-26 16:32:46 DEBUG FireStationController:103 - Obtention de la liste des numéros téléphone couvert par la station indiqué.
+2022-03-26 16:32:46 ERROR FireStationController:110 - 
+2022-03-26 16:33:44 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donnée.
+2022-03-26 16:33:44 INFO  FireStationController:121 - Listes des foyers obtenues pour /flood/stations?stations
+2022-03-26 16:34:13 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donnée.
+2022-03-26 16:34:13 ERROR FireStationController:124 - 
+2022-03-26 16:34:26 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donnée.
+2022-03-26 16:34:26 ERROR FireStationController:124 - 
+2022-03-26 16:34:38 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:34:38 ERROR FireStationController:68 - 
+2022-03-26 16:34:38 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:34:38 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:34:38 ERROR FireStationController:36 - 
+2022-03-26 16:34:38 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donn�e.
+2022-03-26 16:34:38 ERROR FireStationController:124 - 
+2022-03-26 16:34:38 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant � l'adresse indiqu�.
+2022-03-26 16:34:38 INFO  FireStationController:94 - Liste trouv� pour /fire?address=
+2022-03-26 16:34:38 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:34:38 INFO  FireStationController:48 - La station a bien �t� modifier
+2022-03-26 16:34:38 DEBUG FireStationController:103 - Obtention de la liste des num�ros t�l�phone couvert par la station indiqu�.
+2022-03-26 16:34:38 INFO  FireStationController:107 - Liste trouv� pour /phoneAlert?firestation=
+2022-03-26 16:34:38 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:34:38 INFO  FireStationController:63 - La station a bien �t� supprimer
+2022-03-26 16:34:38 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:34:38 ERROR FireStationController:65 - 
+2022-03-26 16:34:38 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant � l'adresse indiqu�.
+2022-03-26 16:34:38 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:34:38 DEBUG FireStationController:103 - Obtention de la liste des num�ros t�l�phone couvert par la station indiqu�.
+2022-03-26 16:34:38 ERROR FireStationController:110 - 
+2022-03-26 16:34:38 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:34:38 INFO  FireStationController:34 - La station a bien �t� ajouter
+2022-03-26 16:34:38 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:34:38 ERROR FireStationController:36 - 
+2022-03-26 16:34:38 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donn�e.
+2022-03-26 16:34:38 INFO  FireStationController:121 - Listes des foyers obtenues pour /flood/stations?stations
+2022-03-26 16:34:39 DEBUG MedicalRecordController:44 - Modifier un dossier m�dicale
+2022-03-26 16:34:39 ERROR MedicalRecordController:53 - 
+2022-03-26 16:34:39 DEBUG MedicalRecordController:62 - Supprimer un dossier m�dical
+2022-03-26 16:34:39 ERROR MedicalRecordController:68 - 
+2022-03-26 16:34:39 DEBUG MedicalRecordController:29 - Ajouter un dossier m�dical
+2022-03-26 16:34:39 ERROR MedicalRecordController:35 - 
+2022-03-26 16:34:39 DEBUG MedicalRecordController:44 - Modifier un dossier m�dicale
+2022-03-26 16:34:39 INFO  MedicalRecordController:48 - Le dossier a bien �t� modifier
+2022-03-26 16:34:39 DEBUG MedicalRecordController:44 - Modifier un dossier m�dicale
+2022-03-26 16:34:39 ERROR MedicalRecordController:50 - 
+2022-03-26 16:34:39 DEBUG MedicalRecordController:29 - Ajouter un dossier m�dical
+2022-03-26 16:34:39 ERROR MedicalRecordController:35 - 
+2022-03-26 16:34:39 DEBUG MedicalRecordController:62 - Supprimer un dossier m�dical
+2022-03-26 16:34:39 ERROR MedicalRecordController:71 - 
+2022-03-26 16:34:39 DEBUG MedicalRecordController:62 - Supprimer un dossier m�dical
+2022-03-26 16:34:39 INFO  MedicalRecordController:66 - Le dossier a bien �t� supprimer
+2022-03-26 16:34:39 DEBUG MedicalRecordController:29 - Ajouter un dossier m�dical
+2022-03-26 16:34:39 INFO  MedicalRecordController:33 - Le dossier m�dical a bien �t� ajouter
+2022-03-26 16:34:39 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:34:39 INFO  PersonController:99 - Liste d'email trouv� pour la ville : Culver
+2022-03-26 16:34:39 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:34:39 ERROR PersonController:55 - 
+2022-03-26 16:34:39 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:34:39 ERROR PersonController:72 - 
+2022-03-26 16:34:39 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:34:39 ERROR PersonController:105 - 
+2022-03-26 16:34:39 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:34:39 ERROR PersonController:38 - 
+2022-03-26 16:34:39 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:34:39 INFO  PersonController:67 - La personne a bien �t� supprim� : Prenom Nom
+2022-03-26 16:34:39 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:34:39 INFO  PersonController:32 - La personne a �t� ajout�
+2022-03-26 16:34:39 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:34:39 ERROR PersonController:69 - 
+2022-03-26 16:34:39 DEBUG PersonController:112 - Obtention de la liste des enfants habitants � l'adresse.
+2022-03-26 16:34:39 INFO  PersonController:116 - R�sultat trouv� pour /childAlert
+2022-03-26 16:34:39 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:34:39 INFO  PersonController:50 - La personne a bien �t� modifier :{"zip":232232,"firstName":"Prenom","lastName":"Nom","address":"address","phone":"0787475144","city":"Culver","email":"email@email.com"}
+2022-03-26 16:34:39 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:34:39 ERROR PersonController:35 - 
+2022-03-26 16:34:39 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:34:39 ERROR PersonController:52 - 
+2022-03-26 16:34:39 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 16:34:39 INFO  PersonController:85 - Liste de personne trouv� au nom de Boyd null
+2022-03-26 16:34:39 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 16:34:39 ERROR PersonController:88 - 
+2022-03-26 16:34:39 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:34:39 ERROR PersonController:102 - 
+2022-03-26 16:34:39 DEBUG PersonController:112 - Obtention de la liste des enfants habitants � l'adresse.
+2022-03-26 16:34:39 ERROR PersonController:119 - 
+2022-03-26 16:34:40 INFO  FireStationsRepo:84 - []
+2022-03-26 16:34:42 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:34:43 INFO  FireStationsRepo:84 - []
+2022-03-26 16:34:43 INFO  FireStationsRepo:84 - []
+2022-03-26 16:34:45 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:34:46 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:34:46 INFO  FireStationsRepo:84 - [29 15th St, 892 Downing Ct, 951 LoneTree Rd]
+2022-03-26 16:34:46 INFO  FireStationsRepo:84 - [834 Binoc Ave, 748 Townings Dr, 112 Steppes Pl, 1509 Culver St]
+2022-03-26 16:34:46 INFO  FireStationsRepo:84 - [489 Manchester St, 112 Steppes Pl]
+2022-03-26 16:36:47 DEBUG FireStationController:76 - Obtention de la liste des personnes couverte par une station
+2022-03-26 16:36:47 ERROR FireStationController:83 - 
+2022-03-26 16:39:27 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donnée.
+2022-03-26 16:39:28 ERROR FireStationController:127 - 
+2022-03-26 16:39:38 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:39:38 ERROR FireStationController:68 - 
+2022-03-26 16:39:38 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:39:38 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:39:38 ERROR FireStationController:36 - 
+2022-03-26 16:39:38 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donn�e.
+2022-03-26 16:39:38 ERROR FireStationController:124 - 
+2022-03-26 16:39:38 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant � l'adresse indiqu�.
+2022-03-26 16:39:38 INFO  FireStationController:94 - Liste trouv� pour /fire?address=
+2022-03-26 16:39:38 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:39:38 INFO  FireStationController:48 - La station a bien �t� modifier
+2022-03-26 16:39:38 DEBUG FireStationController:103 - Obtention de la liste des num�ros t�l�phone couvert par la station indiqu�.
+2022-03-26 16:39:38 INFO  FireStationController:107 - Liste trouv� pour /phoneAlert?firestation=
+2022-03-26 16:39:38 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:39:38 INFO  FireStationController:63 - La station a bien �t� supprimer
+2022-03-26 16:39:38 DEBUG FireStationController:76 - Obtention de la liste des personnes couverte par une station
+2022-03-26 16:39:38 INFO  FireStationController:80 - Liste de personnes couverte par la station obtenu.
+2022-03-26 16:39:38 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:39:38 ERROR FireStationController:65 - 
+2022-03-26 16:39:38 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant � l'adresse indiqu�.
+2022-03-26 16:39:38 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:39:38 DEBUG FireStationController:76 - Obtention de la liste des personnes couverte par une station
+2022-03-26 16:39:38 ERROR FireStationController:83 - 
+2022-03-26 16:39:38 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donn�e.
+2022-03-26 16:39:38 ERROR FireStationController:127 - 
+2022-03-26 16:39:38 DEBUG FireStationController:103 - Obtention de la liste des num�ros t�l�phone couvert par la station indiqu�.
+2022-03-26 16:39:38 ERROR FireStationController:110 - 
+2022-03-26 16:39:38 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:39:38 INFO  FireStationController:34 - La station a bien �t� ajouter
+2022-03-26 16:39:38 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:39:38 ERROR FireStationController:36 - 
+2022-03-26 16:39:38 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donn�e.
+2022-03-26 16:39:38 INFO  FireStationController:121 - Listes des foyers obtenues pour /flood/stations?stations
+2022-03-26 16:39:38 DEBUG MedicalRecordController:44 - Modifier un dossier m�dicale
+2022-03-26 16:39:38 ERROR MedicalRecordController:53 - 
+2022-03-26 16:39:38 DEBUG MedicalRecordController:62 - Supprimer un dossier m�dical
+2022-03-26 16:39:38 ERROR MedicalRecordController:68 - 
+2022-03-26 16:39:38 DEBUG MedicalRecordController:29 - Ajouter un dossier m�dical
+2022-03-26 16:39:38 ERROR MedicalRecordController:35 - 
+2022-03-26 16:39:38 DEBUG MedicalRecordController:44 - Modifier un dossier m�dicale
+2022-03-26 16:39:38 INFO  MedicalRecordController:48 - Le dossier a bien �t� modifier
+2022-03-26 16:39:38 DEBUG MedicalRecordController:44 - Modifier un dossier m�dicale
+2022-03-26 16:39:38 ERROR MedicalRecordController:50 - 
+2022-03-26 16:39:38 DEBUG MedicalRecordController:29 - Ajouter un dossier m�dical
+2022-03-26 16:39:38 ERROR MedicalRecordController:35 - 
+2022-03-26 16:39:38 DEBUG MedicalRecordController:62 - Supprimer un dossier m�dical
+2022-03-26 16:39:38 ERROR MedicalRecordController:71 - 
+2022-03-26 16:39:38 DEBUG MedicalRecordController:62 - Supprimer un dossier m�dical
+2022-03-26 16:39:38 INFO  MedicalRecordController:66 - Le dossier a bien �t� supprimer
+2022-03-26 16:39:38 DEBUG MedicalRecordController:29 - Ajouter un dossier m�dical
+2022-03-26 16:39:38 INFO  MedicalRecordController:33 - Le dossier m�dical a bien �t� ajouter
+2022-03-26 16:39:39 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:39:39 INFO  PersonController:99 - Liste d'email trouv� pour la ville : Culver
+2022-03-26 16:39:39 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:39:39 ERROR PersonController:55 - 
+2022-03-26 16:39:39 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:39:39 ERROR PersonController:72 - 
+2022-03-26 16:39:39 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:39:39 ERROR PersonController:105 - 
+2022-03-26 16:39:39 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:39:39 ERROR PersonController:38 - 
+2022-03-26 16:39:39 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:39:39 INFO  PersonController:67 - La personne a bien �t� supprim� : Prenom Nom
+2022-03-26 16:39:39 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:39:39 INFO  PersonController:32 - La personne a �t� ajout�
+2022-03-26 16:39:39 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:39:39 ERROR PersonController:69 - 
+2022-03-26 16:39:39 DEBUG PersonController:112 - Obtention de la liste des enfants habitants � l'adresse.
+2022-03-26 16:39:39 INFO  PersonController:116 - R�sultat trouv� pour /childAlert
+2022-03-26 16:39:39 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:39:39 INFO  PersonController:50 - La personne a bien �t� modifier :{"zip":232232,"firstName":"Prenom","lastName":"Nom","address":"address","phone":"0787475144","city":"Culver","email":"email@email.com"}
+2022-03-26 16:39:39 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:39:39 ERROR PersonController:35 - 
+2022-03-26 16:39:39 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:39:39 ERROR PersonController:52 - 
+2022-03-26 16:39:39 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 16:39:39 INFO  PersonController:85 - Liste de personne trouv� au nom de Boyd null
+2022-03-26 16:39:39 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 16:39:39 ERROR PersonController:88 - 
+2022-03-26 16:39:39 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:39:39 ERROR PersonController:102 - 
+2022-03-26 16:39:39 DEBUG PersonController:112 - Obtention de la liste des enfants habitants � l'adresse.
+2022-03-26 16:39:39 ERROR PersonController:119 - 
+2022-03-26 16:39:39 INFO  FireStationsRepo:84 - []
+2022-03-26 16:39:41 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:39:42 INFO  FireStationsRepo:84 - []
+2022-03-26 16:39:42 INFO  FireStationsRepo:84 - []
+2022-03-26 16:39:45 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:39:45 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:39:45 INFO  FireStationsRepo:84 - [29 15th St, 892 Downing Ct, 951 LoneTree Rd]
+2022-03-26 16:39:45 INFO  FireStationsRepo:84 - [834 Binoc Ave, 748 Townings Dr, 112 Steppes Pl, 1509 Culver St]
+2022-03-26 16:39:45 INFO  FireStationsRepo:84 - [489 Manchester St, 112 Steppes Pl]
+2022-03-26 16:41:56 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:41:56 INFO  PersonController:99 - Liste d'email trouvé pour la ville : Culver
+2022-03-26 16:41:56 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:41:56 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:41:56 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:41:56 ERROR PersonController:72 - La personne à supprimé n'existe pas ou est introuvable
+2022-03-26 16:41:56 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:41:56 ERROR PersonController:102 - Aucune personne ne correspond à la ville
+2022-03-26 16:41:56 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:41:56 INFO  PersonController:32 - La personne a été ajouté
+2022-03-26 16:41:56 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:41:56 INFO  PersonController:67 - La personne a bien été supprimé : Prenom Nom
+2022-03-26 16:41:56 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:41:56 INFO  PersonController:32 - La personne a été ajouté
+2022-03-26 16:41:56 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:41:56 INFO  PersonController:67 - La personne a bien été supprimé : Prenom Nom
+2022-03-26 16:41:56 DEBUG PersonController:112 - Obtention de la liste des enfants habitants à l'adresse.
+2022-03-26 16:41:56 INFO  PersonController:116 - Résultat trouvé pour /childAlert
+2022-03-26 16:41:56 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:41:56 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:41:56 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:41:56 ERROR PersonController:35 - Personne non valide, il manque des informations
+2022-03-26 16:41:56 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:41:56 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:41:56 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 16:41:56 INFO  PersonController:85 - Liste de personne trouvé au nom de Boyd null
+2022-03-26 16:41:56 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 16:41:56 ERROR PersonController:88 - Aucune personne n'a été trouvé
+2022-03-26 16:41:56 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:41:56 ERROR PersonController:102 - Aucune personne ne correspond à la ville
+2022-03-26 16:41:56 DEBUG PersonController:112 - Obtention de la liste des enfants habitants à l'adresse.
+2022-03-26 16:41:56 ERROR PersonController:119 - Aucune personne n'a été trouvé.
+2022-03-26 16:43:15 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:43:15 ERROR PersonController:102 - Aucune personne ne correspond à la ville
+2022-03-26 16:43:29 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:43:29 INFO  PersonController:99 - Liste d'email trouvé pour la ville : Culver
+2022-03-26 16:43:29 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:43:29 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:43:29 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:43:29 ERROR PersonController:72 - La personne à supprimé n'existe pas ou est introuvable
+2022-03-26 16:43:29 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:43:29 ERROR PersonController:102 - Aucune personne ne correspond à la ville
+2022-03-26 16:43:29 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:43:29 INFO  PersonController:32 - La personne a été ajouté
+2022-03-26 16:43:29 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:43:29 INFO  PersonController:67 - La personne a bien été supprimé : Prenom Nom
+2022-03-26 16:43:29 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:43:29 INFO  PersonController:32 - La personne a été ajouté
+2022-03-26 16:43:29 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:43:29 INFO  PersonController:67 - La personne a bien été supprimé : Prenom Nom
+2022-03-26 16:43:29 DEBUG PersonController:112 - Obtention de la liste des enfants habitants à l'adresse.
+2022-03-26 16:43:29 INFO  PersonController:116 - Résultat trouvé pour /childAlert
+2022-03-26 16:43:29 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:43:29 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:43:29 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:43:29 ERROR PersonController:35 - Personne non valide, il manque des informations
+2022-03-26 16:43:29 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:43:29 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:43:29 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 16:43:29 INFO  PersonController:85 - Liste de personne trouvé au nom de Boyd null
+2022-03-26 16:43:29 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 16:43:29 ERROR PersonController:88 - Aucune personne n'a été trouvé
+2022-03-26 16:43:29 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:43:29 ERROR PersonController:102 - Aucune personne ne correspond à la ville
+2022-03-26 16:43:29 DEBUG PersonController:112 - Obtention de la liste des enfants habitants à l'adresse.
+2022-03-26 16:43:29 ERROR PersonController:119 - Aucune personne n'a été trouvé.
+2022-03-26 16:44:07 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:44:07 INFO  PersonController:99 - Liste d'email trouvé pour la ville : Culver
+2022-03-26 16:44:07 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:44:07 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:44:08 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:44:08 ERROR PersonController:72 - La personne à supprimé n'existe pas ou est introuvable
+2022-03-26 16:44:08 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:44:08 ERROR PersonController:102 - Aucune personne ne correspond à la ville
+2022-03-26 16:44:08 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:44:08 INFO  PersonController:32 - La personne a été ajouté
+2022-03-26 16:44:08 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:44:08 INFO  PersonController:67 - La personne a bien été supprimé : Prenom Nom
+2022-03-26 16:44:09 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:44:09 INFO  PersonController:32 - La personne a été ajouté
+2022-03-26 16:44:09 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:44:09 INFO  PersonController:67 - La personne a bien été supprimé : Prenom Nom
+2022-03-26 16:44:09 DEBUG PersonController:112 - Obtention de la liste des enfants habitants à l'adresse.
+2022-03-26 16:44:09 INFO  PersonController:116 - Résultat trouvé pour /childAlert
+2022-03-26 16:44:09 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:44:09 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:44:09 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:44:09 ERROR PersonController:35 - Personne non valide, il manque des informations
+2022-03-26 16:44:10 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:44:10 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:44:10 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 16:44:10 INFO  PersonController:85 - Liste de personne trouvé au nom de Boyd null
+2022-03-26 16:44:10 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 16:44:10 ERROR PersonController:88 - Aucune personne n'a été trouvé
+2022-03-26 16:44:10 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:44:10 ERROR PersonController:102 - Aucune personne ne correspond à la ville
+2022-03-26 16:44:10 DEBUG PersonController:112 - Obtention de la liste des enfants habitants à l'adresse.
+2022-03-26 16:44:10 ERROR PersonController:119 - Aucune personne n'a été trouvé.
+2022-03-26 16:44:45 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:44:45 INFO  PersonController:99 - Liste d'email trouvé pour la ville : Culver
+2022-03-26 16:44:46 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:44:46 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:44:46 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:44:46 ERROR PersonController:72 - La personne à supprimé n'existe pas ou est introuvable
+2022-03-26 16:44:47 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:44:47 INFO  PersonController:32 - La personne a été ajouté
+2022-03-26 16:44:47 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:44:47 INFO  PersonController:67 - La personne a bien été supprimé : Prenom Nom
+2022-03-26 16:44:47 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:44:47 INFO  PersonController:32 - La personne a été ajouté
+2022-03-26 16:44:47 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:44:47 INFO  PersonController:67 - La personne a bien été supprimé : Prenom Nom
+2022-03-26 16:44:47 DEBUG PersonController:112 - Obtention de la liste des enfants habitants à l'adresse.
+2022-03-26 16:44:47 INFO  PersonController:116 - Résultat trouvé pour /childAlert
+2022-03-26 16:44:48 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:44:48 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:44:48 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:44:48 ERROR PersonController:35 - Personne non valide, il manque des informations
+2022-03-26 16:44:48 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:44:48 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:44:48 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 16:44:48 INFO  PersonController:85 - Liste de personne trouvé au nom de Boyd null
+2022-03-26 16:44:49 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 16:44:49 ERROR PersonController:88 - Aucune personne n'a été trouvé
+2022-03-26 16:44:49 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:44:49 ERROR PersonController:102 - Aucune personne ne correspond à la ville
+2022-03-26 16:44:49 DEBUG PersonController:112 - Obtention de la liste des enfants habitants à l'adresse.
+2022-03-26 16:44:49 ERROR PersonController:119 - Aucune personne n'a été trouvé.
+2022-03-26 16:45:05 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:45:05 ERROR PersonController:38 - Cette personne existe déjà.
+2022-03-26 16:45:15 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:45:15 INFO  PersonController:99 - Liste d'email trouvé pour la ville : Culver
+2022-03-26 16:45:15 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:45:15 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:45:15 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:45:15 ERROR PersonController:72 - La personne à supprimé n'existe pas ou est introuvable
+2022-03-26 16:45:16 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:45:16 ERROR PersonController:38 - Cette personne existe déjà.
+2022-03-26 16:45:16 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:45:16 ERROR PersonController:72 - La personne à supprimé n'existe pas ou est introuvable
+2022-03-26 16:45:16 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:45:16 INFO  PersonController:32 - La personne a été ajouté
+2022-03-26 16:45:17 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:45:17 INFO  PersonController:67 - La personne a bien été supprimé : Prenom Nom
+2022-03-26 16:45:17 DEBUG PersonController:112 - Obtention de la liste des enfants habitants à l'adresse.
+2022-03-26 16:45:17 INFO  PersonController:116 - Résultat trouvé pour /childAlert
+2022-03-26 16:45:17 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:45:17 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:45:17 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:45:17 ERROR PersonController:35 - Personne non valide, il manque des informations
+2022-03-26 16:45:17 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:45:17 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:45:18 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 16:45:18 INFO  PersonController:85 - Liste de personne trouvé au nom de Boyd null
+2022-03-26 16:45:18 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 16:45:18 ERROR PersonController:88 - Aucune personne n'a été trouvé
+2022-03-26 16:45:18 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:45:18 ERROR PersonController:102 - Aucune personne ne correspond à la ville
+2022-03-26 16:45:18 DEBUG PersonController:112 - Obtention de la liste des enfants habitants à l'adresse.
+2022-03-26 16:45:18 ERROR PersonController:119 - Aucune personne n'a été trouvé.
+2022-03-26 16:45:54 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=null)
+2022-03-26 16:45:54 ERROR PersonController:72 - La personne à supprimé n'existe pas ou est introuvable
+2022-03-26 16:46:15 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=John, lastName=Boyd, email=email@email.com, city=Culver, zip=232232, address=address, phone=null)
+2022-03-26 16:46:15 INFO  PersonController:67 - La personne a bien été supprimé : John Boyd
+2022-03-26 16:47:12 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=null, lastName=Boyd, email=email@email.com, city=Culver, zip=232232, address=address, phone=null)
+2022-03-26 16:47:12 ERROR PersonController:69 - Nom ou prénom invalide
+2022-03-26 16:47:24 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:47:24 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:47:25 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=John, lastName=Boyd, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:47:25 INFO  PersonController:67 - La personne a bien été supprimé : John Boyd
+2022-03-26 16:47:32 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:47:32 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:47:32 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=John, lastName=Boyd, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:47:32 INFO  PersonController:67 - La personne a bien été supprimé : John Boyd
+2022-03-26 16:47:40 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:47:40 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:47:41 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=John, lastName=Boyd, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:47:41 INFO  PersonController:67 - La personne a bien été supprimé : John Boyd
+2022-03-26 16:48:10 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:48:10 INFO  PersonController:99 - Liste d'email trouvé pour la ville : Culver
+2022-03-26 16:48:10 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:48:10 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:48:10 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:48:10 ERROR PersonController:72 - La personne à supprimé n'existe pas ou est introuvable
+2022-03-26 16:48:11 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:48:11 ERROR PersonController:38 - Cette personne existe déjà.
+2022-03-26 16:48:11 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=John, lastName=Boyd, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:48:11 INFO  PersonController:67 - La personne a bien été supprimé : John Boyd
+2022-03-26 16:48:11 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:48:11 INFO  PersonController:32 - La personne a été ajouté
+2022-03-26 16:48:12 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=null, lastName=Boyd, email=email@email.com, city=Culver, zip=232232, address=address, phone=null)
+2022-03-26 16:48:12 ERROR PersonController:69 - Nom ou prénom invalide
+2022-03-26 16:48:12 DEBUG PersonController:112 - Obtention de la liste des enfants habitants à l'adresse.
+2022-03-26 16:48:12 INFO  PersonController:116 - Résultat trouvé pour /childAlert
+2022-03-26 16:48:12 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:48:12 INFO  PersonController:50 - La personne a bien été modifier :{"zip":232232,"firstName":"Prenom","lastName":"Nom","address":"address","city":"Culver","phone":"0787475144","email":"email@email.com"}
+2022-03-26 16:48:12 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:48:12 ERROR PersonController:35 - Personne non valide, il manque des informations
+2022-03-26 16:48:13 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:48:13 INFO  PersonController:50 - La personne a bien été modifier :{"zip":232232,"firstName":"Prenom","lastName":"Nom","address":"address","city":"Culver","phone":"0787475144","email":"email@email.com"}
+2022-03-26 16:48:13 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 16:48:13 INFO  PersonController:85 - Liste de personne trouvé au nom de Boyd null
+2022-03-26 16:48:13 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 16:48:13 ERROR PersonController:88 - Aucune personne n'a été trouvé
+2022-03-26 16:48:13 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:48:13 ERROR PersonController:102 - Aucune personne ne correspond à la ville
+2022-03-26 16:48:13 DEBUG PersonController:112 - Obtention de la liste des enfants habitants à l'adresse.
+2022-03-26 16:48:13 ERROR PersonController:119 - Aucune personne n'a été trouvé.
+2022-03-26 16:48:31 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:48:31 INFO  PersonController:50 - La personne a bien été modifier :{"zip":232232,"firstName":"John","lastName":"Boyd","address":"address","phone":"0787475144","city":"Culver","email":"email@email.com"}
+2022-03-26 16:48:49 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:48:49 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:49:09 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:49:09 ERROR PersonController:52 - Personne non valide, il manque des informations
+2022-03-26 16:49:12 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:49:12 INFO  PersonController:99 - Liste d'email trouvé pour la ville : Culver
+2022-03-26 16:49:13 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:49:13 ERROR PersonController:55 - Impossible de modifier cette personne
+2022-03-26 16:49:13 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:49:13 ERROR PersonController:72 - La personne à supprimé n'existe pas ou est introuvable
+2022-03-26 16:49:13 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:49:13 ERROR PersonController:38 - Cette personne existe déjà.
+2022-03-26 16:49:14 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=John, lastName=Boyd, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 16:49:14 INFO  PersonController:67 - La personne a bien été supprimé : John Boyd
+2022-03-26 16:49:14 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:49:14 INFO  PersonController:32 - La personne a été ajouté
+2022-03-26 16:49:14 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=null, lastName=Boyd, email=email@email.com, city=Culver, zip=232232, address=address, phone=null)
+2022-03-26 16:49:14 ERROR PersonController:69 - Nom ou prénom invalide
+2022-03-26 16:49:14 DEBUG PersonController:112 - Obtention de la liste des enfants habitants à l'adresse.
+2022-03-26 16:49:14 INFO  PersonController:116 - Résultat trouvé pour /childAlert
+2022-03-26 16:49:15 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:49:15 INFO  PersonController:50 - La personne a bien été modifier :{"zip":232232,"lastName":"Nom","firstName":"Prenom","address":"address","phone":"0787475144","city":"Culver","email":"email@email.com"}
+2022-03-26 16:49:15 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 16:49:15 ERROR PersonController:35 - Personne non valide, il manque des informations
+2022-03-26 16:49:15 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 16:49:15 ERROR PersonController:52 - Personne non valide, il manque des informations
+2022-03-26 16:49:15 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 16:49:15 INFO  PersonController:85 - Liste de personne trouvé au nom de Boyd null
+2022-03-26 16:49:15 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 16:49:15 ERROR PersonController:88 - Aucune personne n'a été trouvé
+2022-03-26 16:49:16 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 16:49:16 ERROR PersonController:102 - Aucune personne ne correspond à la ville
+2022-03-26 16:49:16 DEBUG PersonController:112 - Obtention de la liste des enfants habitants à l'adresse.
+2022-03-26 16:49:16 ERROR PersonController:119 - Aucune personne n'a été trouvé.
+2022-03-26 16:51:48 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:51:48 ERROR FireStationController:68 - Aucune station trouvé
+2022-03-26 16:51:49 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:51:49 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:51:49 INFO  FireStationController:34 - La station a bien été ajouter
+2022-03-26 16:51:49 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donnée.
+2022-03-26 16:51:49 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:51:49 INFO  FireStationsRepo:84 - [29 15th St, 892 Downing Ct, 951 LoneTree Rd]
+2022-03-26 16:51:49 INFO  FireStationsRepo:84 - [1509 Culver St, 834 Binoc Ave, 748 Townings Dr, 112 Steppes Pl]
+2022-03-26 16:51:49 INFO  FireStationController:121 - Listes des foyers obtenues pour /flood/stations?stations
+2022-03-26 16:51:49 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant à l'adresse indiqué.
+2022-03-26 16:51:50 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:51:50 INFO  FireStationController:48 - La station a bien été modifier
+2022-03-26 16:51:50 DEBUG FireStationController:103 - Obtention de la liste des numéros téléphone couvert par la station indiqué.
+2022-03-26 16:51:50 INFO  FireStationsRepo:84 - [489 Manchester St, 112 Steppes Pl]
+2022-03-26 16:51:50 INFO  FireStationController:107 - Liste trouvé pour /phoneAlert?firestation=
+2022-03-26 16:51:50 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:51:50 INFO  FireStationController:63 - La station a bien été supprimer
+2022-03-26 16:51:50 DEBUG FireStationController:76 - Obtention de la liste des personnes couverte par une station
+2022-03-26 16:51:50 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:51:50 INFO  FireStationController:80 - Liste de personnes couverte par la station obtenu.
+2022-03-26 16:51:51 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:51:51 ERROR FireStationController:68 - Aucune station trouvé
+2022-03-26 16:51:51 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant à l'adresse indiqué.
+2022-03-26 16:51:51 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:51:51 DEBUG FireStationController:76 - Obtention de la liste des personnes couverte par une station
+2022-03-26 16:51:51 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:51:51 INFO  FireStationController:80 - Liste de personnes couverte par la station obtenu.
+2022-03-26 16:51:51 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donnée.
+2022-03-26 16:51:51 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:51:51 INFO  FireStationsRepo:84 - [29 15th St, 892 Downing Ct, 951 LoneTree Rd]
+2022-03-26 16:51:51 INFO  FireStationsRepo:84 - [1509 Culver St, 834 Binoc Ave, 748 Townings Dr, 112 Steppes Pl]
+2022-03-26 16:51:51 INFO  FireStationController:121 - Listes des foyers obtenues pour /flood/stations?stations
+2022-03-26 16:51:52 DEBUG FireStationController:103 - Obtention de la liste des numéros téléphone couvert par la station indiqué.
+2022-03-26 16:51:52 INFO  FireStationsRepo:84 - [489 Manchester St, 112 Steppes Pl]
+2022-03-26 16:51:52 INFO  FireStationController:107 - Liste trouvé pour /phoneAlert?firestation=
+2022-03-26 16:51:52 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:51:52 INFO  FireStationController:34 - La station a bien été ajouter
+2022-03-26 16:51:52 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:51:52 ERROR FireStationController:36 - La station existe déjà pour
+2022-03-26 16:51:52 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donnée.
+2022-03-26 16:51:52 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:51:52 INFO  FireStationsRepo:84 - [29 15th St, 892 Downing Ct, 951 LoneTree Rd]
+2022-03-26 16:51:52 INFO  FireStationsRepo:84 - [1509 Culver St, 834 Binoc Ave, 748 Townings Dr, 112 Steppes Pl]
+2022-03-26 16:51:52 INFO  FireStationController:121 - Listes des foyers obtenues pour /flood/stations?stations
+2022-03-26 16:54:26 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:54:26 ERROR FireStationController:68 - Aucune station trouvé
+2022-03-26 16:54:27 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:54:27 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:54:27 ERROR FireStationController:36 - Informations non valide
+2022-03-26 16:54:27 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donnée.
+2022-03-26 16:54:27 INFO  FireStationsRepo:84 - []
+2022-03-26 16:54:27 ERROR FireStationController:124 - Aucune adresse trouvé correspondante à une de ces stations.
+2022-03-26 16:54:27 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant à l'adresse indiqué.
+2022-03-26 16:54:27 INFO  FireStationController:94 - Liste trouvé pour /fire?address=
+2022-03-26 16:54:28 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:54:28 DEBUG FireStationController:103 - Obtention de la liste des numéros téléphone couvert par la station indiqué.
+2022-03-26 16:54:28 INFO  FireStationsRepo:84 - [489 Manchester St, 112 Steppes Pl]
+2022-03-26 16:54:28 INFO  FireStationController:107 - Liste trouvé pour /phoneAlert?firestation=
+2022-03-26 16:54:28 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:54:28 ERROR FireStationController:68 - Aucune station trouvé
+2022-03-26 16:54:28 DEBUG FireStationController:76 - Obtention de la liste des personnes couverte par une station
+2022-03-26 16:54:28 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:54:28 INFO  FireStationController:80 - Liste de personnes couverte par la station obtenu.
+2022-03-26 16:54:29 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:54:29 INFO  FireStationController:63 - La station a bien été supprimer
+2022-03-26 16:54:29 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant à l'adresse indiqué.
+2022-03-26 16:54:29 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:54:29 DEBUG FireStationController:76 - Obtention de la liste des personnes couverte par une station
+2022-03-26 16:54:29 INFO  FireStationsRepo:84 - []
+2022-03-26 16:54:29 ERROR FireStationController:83 - La station 187 n'existe pas.
+2022-03-26 16:54:30 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:54:30 INFO  FireStationController:34 - La station a bien été ajouter
+2022-03-26 16:54:30 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:54:30 ERROR FireStationController:36 - La station existe déjà pour
+2022-03-26 16:54:30 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donnée.
+2022-03-26 16:54:30 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:54:30 INFO  FireStationsRepo:84 - [892 Downing Ct, 951 LoneTree Rd, 29 15th St]
+2022-03-26 16:54:30 INFO  FireStationsRepo:84 - [1509 Culver St, 834 Binoc Ave, 748 Townings Dr, 112 Steppes Pl]
+2022-03-26 16:54:30 INFO  FireStationController:121 - Listes des foyers obtenues pour /flood/stations?stations
+2022-03-26 16:55:30 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:55:30 ERROR FireStationController:68 - Aucune station trouvé
+2022-03-26 16:55:30 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:55:31 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:55:31 ERROR FireStationController:36 - Informations non valide
+2022-03-26 16:55:31 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donnée.
+2022-03-26 16:55:31 INFO  FireStationsRepo:84 - []
+2022-03-26 16:55:31 ERROR FireStationController:124 - Aucune adresse trouvé correspondante à une de ces stations.
+2022-03-26 16:55:31 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant à l'adresse indiqué.
+2022-03-26 16:55:31 INFO  FireStationController:94 - Liste trouvé pour /fire?address=
+2022-03-26 16:55:31 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:55:31 INFO  FireStationController:48 - La station a bien été modifier
+2022-03-26 16:55:32 DEBUG FireStationController:103 - Obtention de la liste des numéros téléphone couvert par la station indiqué.
+2022-03-26 16:55:32 INFO  FireStationsRepo:84 - [489 Manchester St, 112 Steppes Pl]
+2022-03-26 16:55:32 INFO  FireStationController:107 - Liste trouvé pour /phoneAlert?firestation=
+2022-03-26 16:55:32 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:55:32 INFO  FireStationController:63 - La station a bien été supprimer
+2022-03-26 16:55:32 DEBUG FireStationController:76 - Obtention de la liste des personnes couverte par une station
+2022-03-26 16:55:32 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:55:32 INFO  FireStationController:80 - Liste de personnes couverte par la station obtenu.
+2022-03-26 16:55:32 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:55:32 INFO  FireStationController:63 - La station a bien été supprimer
+2022-03-26 16:55:33 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant à l'adresse indiqué.
+2022-03-26 16:55:33 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:55:33 DEBUG FireStationController:76 - Obtention de la liste des personnes couverte par une station
+2022-03-26 16:55:33 INFO  FireStationsRepo:84 - []
+2022-03-26 16:55:33 ERROR FireStationController:83 - La station 187 n'existe pas.
+2022-03-26 16:55:33 DEBUG FireStationController:103 - Obtention de la liste des numéros téléphone couvert par la station indiqué.
+2022-03-26 16:55:33 INFO  FireStationsRepo:84 - []
+2022-03-26 16:55:33 ERROR FireStationController:110 - Aucune adresse trouvé correspondant à l'adresse.
+2022-03-26 16:55:33 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:55:33 INFO  FireStationController:34 - La station a bien été ajouter
+2022-03-26 16:55:34 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:55:34 ERROR FireStationController:36 - La station existe déjà pour
+2022-03-26 16:55:34 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donnée.
+2022-03-26 16:55:34 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:55:34 INFO  FireStationsRepo:84 - [892 Downing Ct, 951 LoneTree Rd, 29 15th St]
+2022-03-26 16:55:34 INFO  FireStationsRepo:84 - [1509 Culver St, 748 Townings Dr, 112 Steppes Pl, 834 Binoc Ave]
+2022-03-26 16:55:34 INFO  FireStationController:121 - Listes des foyers obtenues pour /flood/stations?stations
+2022-03-26 16:55:58 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:55:58 ERROR FireStationController:68 - Aucune station trouvé
+2022-03-26 16:55:59 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:55:59 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:55:59 ERROR FireStationController:36 - Informations non valide
+2022-03-26 16:55:59 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donnée.
+2022-03-26 16:55:59 INFO  FireStationsRepo:84 - []
+2022-03-26 16:55:59 ERROR FireStationController:124 - Aucune adresse trouvé correspondante à une de ces stations.
+2022-03-26 16:55:59 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant à l'adresse indiqué.
+2022-03-26 16:55:59 INFO  FireStationController:94 - Liste trouvé pour /fire?address=
+2022-03-26 16:56:00 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:56:00 INFO  FireStationController:48 - La station a bien été modifier
+2022-03-26 16:56:00 DEBUG FireStationController:103 - Obtention de la liste des numéros téléphone couvert par la station indiqué.
+2022-03-26 16:56:00 INFO  FireStationsRepo:84 - [489 Manchester St, 112 Steppes Pl]
+2022-03-26 16:56:00 INFO  FireStationController:107 - Liste trouvé pour /phoneAlert?firestation=
+2022-03-26 16:56:00 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:56:00 INFO  FireStationController:63 - La station a bien été supprimer
+2022-03-26 16:56:00 DEBUG FireStationController:76 - Obtention de la liste des personnes couverte par une station
+2022-03-26 16:56:00 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:56:00 INFO  FireStationController:80 - Liste de personnes couverte par la station obtenu.
+2022-03-26 16:56:01 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:56:01 INFO  FireStationController:63 - La station a bien été supprimer
+2022-03-26 16:56:01 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant à l'adresse indiqué.
+2022-03-26 16:56:01 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:56:01 DEBUG FireStationController:76 - Obtention de la liste des personnes couverte par une station
+2022-03-26 16:56:01 INFO  FireStationsRepo:84 - []
+2022-03-26 16:56:01 ERROR FireStationController:83 - La station 187 n'existe pas.
+2022-03-26 16:56:02 DEBUG FireStationController:103 - Obtention de la liste des numéros téléphone couvert par la station indiqué.
+2022-03-26 16:56:02 INFO  FireStationsRepo:84 - []
+2022-03-26 16:56:02 ERROR FireStationController:110 - Aucune adresse trouvé correspondant à l'adresse.
+2022-03-26 16:56:02 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:56:02 INFO  FireStationController:34 - La station a bien été ajouter
+2022-03-26 16:56:02 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:56:02 ERROR FireStationController:36 - La station existe déjà pour
+2022-03-26 16:56:02 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donnée.
+2022-03-26 16:56:02 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:56:02 INFO  FireStationsRepo:84 - [892 Downing Ct, 951 LoneTree Rd, 29 15th St]
+2022-03-26 16:56:02 INFO  FireStationsRepo:84 - [1509 Culver St, 748 Townings Dr, 112 Steppes Pl, 834 Binoc Ave]
+2022-03-26 16:56:02 INFO  FireStationController:121 - Listes des foyers obtenues pour /flood/stations?stations
+2022-03-26 16:56:23 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:56:23 ERROR FireStationController:68 - Aucune station trouvé
+2022-03-26 16:56:52 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:56:52 ERROR FireStationController:68 - Aucune station trouvé
+2022-03-26 16:57:02 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:57:02 ERROR FireStationController:68 - Aucune station trouvé
+2022-03-26 16:57:02 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:57:02 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:57:02 ERROR FireStationController:36 - Informations non valide
+2022-03-26 16:57:03 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donnée.
+2022-03-26 16:57:03 INFO  FireStationsRepo:84 - []
+2022-03-26 16:57:03 ERROR FireStationController:124 - Aucune adresse trouvé correspondante à une de ces stations.
+2022-03-26 16:57:03 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant à l'adresse indiqué.
+2022-03-26 16:57:03 INFO  FireStationController:94 - Liste trouvé pour /fire?address=
+2022-03-26 16:57:03 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:57:03 INFO  FireStationController:48 - La station a bien été modifier
+2022-03-26 16:57:03 DEBUG FireStationController:103 - Obtention de la liste des numéros téléphone couvert par la station indiqué.
+2022-03-26 16:57:03 INFO  FireStationsRepo:84 - [489 Manchester St, 112 Steppes Pl]
+2022-03-26 16:57:03 INFO  FireStationController:107 - Liste trouvé pour /phoneAlert?firestation=
+2022-03-26 16:57:04 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 16:57:04 INFO  FireStationController:63 - La station a bien été supprimer
+2022-03-26 16:57:04 DEBUG FireStationController:76 - Obtention de la liste des personnes couverte par une station
+2022-03-26 16:57:04 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:57:04 INFO  FireStationController:80 - Liste de personnes couverte par la station obtenu.
+2022-03-26 16:57:04 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant à l'adresse indiqué.
+2022-03-26 16:57:04 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 16:57:05 DEBUG FireStationController:76 - Obtention de la liste des personnes couverte par une station
+2022-03-26 16:57:05 INFO  FireStationsRepo:84 - []
+2022-03-26 16:57:05 ERROR FireStationController:83 - La station 187 n'existe pas.
+2022-03-26 16:57:05 DEBUG FireStationController:103 - Obtention de la liste des numéros téléphone couvert par la station indiqué.
+2022-03-26 16:57:05 INFO  FireStationsRepo:84 - []
+2022-03-26 16:57:05 ERROR FireStationController:110 - Aucune adresse trouvé correspondant à l'adresse.
+2022-03-26 16:57:05 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:57:05 INFO  FireStationController:34 - La station a bien été ajouter
+2022-03-26 16:57:05 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 16:57:05 ERROR FireStationController:36 - La station existe déjà pour
+2022-03-26 16:57:06 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donnée.
+2022-03-26 16:57:06 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 16:57:06 INFO  FireStationsRepo:84 - [29 15th St, 892 Downing Ct, 951 LoneTree Rd]
+2022-03-26 16:57:06 INFO  FireStationsRepo:84 - [1509 Culver St, 748 Townings Dr, 112 Steppes Pl, 834 Binoc Ave]
+2022-03-26 16:57:06 INFO  FireStationController:121 - Listes des foyers obtenues pour /flood/stations?stations
+2022-03-26 16:58:46 DEBUG MedicalRecordController:44 - Modifier un dossier médicale
+2022-03-26 16:58:46 INFO  MedicalRecordController:48 - Le dossier a bien été modifier
+2022-03-26 16:58:47 DEBUG MedicalRecordController:62 - Supprimer un dossier médical
+2022-03-26 16:58:47 INFO  MedicalRecordController:66 - Le dossier a bien été supprimer
+2022-03-26 16:58:47 DEBUG MedicalRecordController:29 - Ajouter un dossier médical
+2022-03-26 16:58:47 ERROR MedicalRecordController:35 - Le dossier médical existe déjà pour John Boyd
+2022-03-26 16:58:47 DEBUG MedicalRecordController:44 - Modifier un dossier médicale
+2022-03-26 16:58:47 INFO  MedicalRecordController:48 - Le dossier a bien été modifier
+2022-03-26 16:58:48 DEBUG MedicalRecordController:44 - Modifier un dossier médicale
+2022-03-26 16:58:48 INFO  MedicalRecordController:48 - Le dossier a bien été modifier
+2022-03-26 16:58:48 DEBUG MedicalRecordController:29 - Ajouter un dossier médical
+2022-03-26 16:58:48 ERROR MedicalRecordController:35 - Dossier médical non valide, il manque des informations
+2022-03-26 16:58:48 DEBUG MedicalRecordController:62 - Supprimer un dossier médical
+2022-03-26 16:58:48 INFO  MedicalRecordController:66 - Le dossier a bien été supprimer
+2022-03-26 16:58:48 DEBUG MedicalRecordController:62 - Supprimer un dossier médical
+2022-03-26 16:58:48 INFO  MedicalRecordController:66 - Le dossier a bien été supprimer
+2022-03-26 16:58:49 DEBUG MedicalRecordController:29 - Ajouter un dossier médical
+2022-03-26 16:58:49 INFO  MedicalRecordController:33 - Le dossier médical a bien été ajouter
+2022-03-26 17:00:55 DEBUG MedicalRecordController:62 - Supprimer un dossier médical
+2022-03-26 17:00:55 ERROR MedicalRecordController:68 - Nom ou prénom invalide
+2022-03-26 17:00:55 DEBUG MedicalRecordController:29 - Ajouter un dossier médical
+2022-03-26 17:00:55 ERROR MedicalRecordController:35 - Le dossier médical existe déjà pour John Boyd
+2022-03-26 17:00:56 DEBUG MedicalRecordController:44 - Modifier un dossier médicale
+2022-03-26 17:00:56 INFO  MedicalRecordController:48 - Le dossier a bien été modifier
+2022-03-26 17:00:56 DEBUG MedicalRecordController:44 - Modifier un dossier médicale
+2022-03-26 17:00:56 ERROR MedicalRecordController:50 - Format du dossier invalide
+2022-03-26 17:00:56 DEBUG MedicalRecordController:29 - Ajouter un dossier médical
+2022-03-26 17:00:56 ERROR MedicalRecordController:35 - Dossier médical non valide, il manque des informations
+2022-03-26 17:00:56 DEBUG MedicalRecordController:62 - Supprimer un dossier médical
+2022-03-26 17:00:56 ERROR MedicalRecordController:71 - Le dossier à supprimé n'existe pas ou est introuvable
+2022-03-26 17:00:57 DEBUG MedicalRecordController:62 - Supprimer un dossier médical
+2022-03-26 17:00:57 INFO  MedicalRecordController:66 - Le dossier a bien été supprimer
+2022-03-26 17:00:57 DEBUG MedicalRecordController:29 - Ajouter un dossier médical
+2022-03-26 17:00:57 INFO  MedicalRecordController:33 - Le dossier médical a bien été ajouter
+2022-03-26 17:00:57 DEBUG MedicalRecordController:44 - Modifier un dossier médicale
+2022-03-26 17:00:57 ERROR MedicalRecordController:53 - Dossier médical introuvable
+2022-03-26 17:01:13 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 17:01:13 ERROR FireStationController:68 - 
+2022-03-26 17:01:13 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 17:01:13 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 17:01:13 ERROR FireStationController:36 - 
+2022-03-26 17:01:13 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donn�e.
+2022-03-26 17:01:13 ERROR FireStationController:124 - 
+2022-03-26 17:01:13 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant � l'adresse indiqu�.
+2022-03-26 17:01:13 INFO  FireStationController:94 - Liste trouv� pour /fire?address=
+2022-03-26 17:01:13 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 17:01:13 INFO  FireStationController:48 - La station a bien �t� modifier
+2022-03-26 17:01:13 DEBUG FireStationController:103 - Obtention de la liste des num�ros t�l�phone couvert par la station indiqu�.
+2022-03-26 17:01:13 INFO  FireStationController:107 - Liste trouv� pour /phoneAlert?firestation=
+2022-03-26 17:01:13 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 17:01:13 INFO  FireStationController:63 - La station a bien �t� supprimer
+2022-03-26 17:01:13 DEBUG FireStationController:76 - Obtention de la liste des personnes couverte par une station
+2022-03-26 17:01:13 INFO  FireStationController:80 - Liste de personnes couverte par la station obtenu.
+2022-03-26 17:01:13 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 17:01:13 ERROR FireStationController:65 - 
+2022-03-26 17:01:13 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant � l'adresse indiqu�.
+2022-03-26 17:01:13 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 17:01:13 DEBUG FireStationController:76 - Obtention de la liste des personnes couverte par une station
+2022-03-26 17:01:13 ERROR FireStationController:83 - 
+2022-03-26 17:01:13 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donn�e.
+2022-03-26 17:01:13 ERROR FireStationController:127 - 
+2022-03-26 17:01:13 DEBUG FireStationController:103 - Obtention de la liste des num�ros t�l�phone couvert par la station indiqu�.
+2022-03-26 17:01:13 ERROR FireStationController:110 - 
+2022-03-26 17:01:13 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 17:01:13 INFO  FireStationController:34 - La station a bien �t� ajouter
+2022-03-26 17:01:13 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 17:01:13 ERROR FireStationController:36 - 
+2022-03-26 17:01:13 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donn�e.
+2022-03-26 17:01:13 INFO  FireStationController:121 - Listes des foyers obtenues pour /flood/stations?stations
+2022-03-26 17:01:13 DEBUG MedicalRecordController:62 - Supprimer un dossier m�dical
+2022-03-26 17:01:13 ERROR MedicalRecordController:68 - 
+2022-03-26 17:01:13 DEBUG MedicalRecordController:29 - Ajouter un dossier m�dical
+2022-03-26 17:01:13 ERROR MedicalRecordController:35 - 
+2022-03-26 17:01:13 DEBUG MedicalRecordController:44 - Modifier un dossier m�dicale
+2022-03-26 17:01:13 INFO  MedicalRecordController:48 - Le dossier a bien �t� modifier
+2022-03-26 17:01:13 DEBUG MedicalRecordController:44 - Modifier un dossier m�dicale
+2022-03-26 17:01:13 ERROR MedicalRecordController:50 - 
+2022-03-26 17:01:13 DEBUG MedicalRecordController:29 - Ajouter un dossier m�dical
+2022-03-26 17:01:13 ERROR MedicalRecordController:35 - 
+2022-03-26 17:01:13 DEBUG MedicalRecordController:62 - Supprimer un dossier m�dical
+2022-03-26 17:01:13 ERROR MedicalRecordController:71 - 
+2022-03-26 17:01:13 DEBUG MedicalRecordController:62 - Supprimer un dossier m�dical
+2022-03-26 17:01:13 INFO  MedicalRecordController:66 - Le dossier a bien �t� supprimer
+2022-03-26 17:01:13 DEBUG MedicalRecordController:29 - Ajouter un dossier m�dical
+2022-03-26 17:01:13 INFO  MedicalRecordController:33 - Le dossier m�dical a bien �t� ajouter
+2022-03-26 17:01:13 DEBUG MedicalRecordController:44 - Modifier un dossier m�dicale
+2022-03-26 17:01:13 ERROR MedicalRecordController:53 - 
+2022-03-26 17:01:14 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 17:01:14 INFO  PersonController:99 - Liste d'email trouv� pour la ville : Culver
+2022-03-26 17:01:14 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 17:01:14 ERROR PersonController:55 - 
+2022-03-26 17:01:14 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 17:01:14 ERROR PersonController:72 - 
+2022-03-26 17:01:14 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 17:01:14 ERROR PersonController:105 - 
+2022-03-26 17:01:14 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 17:01:14 ERROR PersonController:38 - 
+2022-03-26 17:01:14 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 17:01:14 INFO  PersonController:67 - La personne a bien �t� supprim� : Prenom Nom
+2022-03-26 17:01:14 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 17:01:14 INFO  PersonController:32 - La personne a �t� ajout�
+2022-03-26 17:01:14 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 17:01:14 ERROR PersonController:69 - 
+2022-03-26 17:01:14 DEBUG PersonController:112 - Obtention de la liste des enfants habitants � l'adresse.
+2022-03-26 17:01:14 INFO  PersonController:116 - R�sultat trouv� pour /childAlert
+2022-03-26 17:01:14 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 17:01:14 INFO  PersonController:50 - La personne a bien �t� modifier :{"zip":232232,"firstName":"Prenom","lastName":"Nom","address":"address","phone":"0787475144","city":"Culver","email":"email@email.com"}
+2022-03-26 17:01:14 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 17:01:14 ERROR PersonController:35 - 
+2022-03-26 17:01:14 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 17:01:14 ERROR PersonController:52 - 
+2022-03-26 17:01:14 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 17:01:14 INFO  PersonController:85 - Liste de personne trouv� au nom de Boyd null
+2022-03-26 17:01:14 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 17:01:14 ERROR PersonController:88 - 
+2022-03-26 17:01:14 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 17:01:14 ERROR PersonController:102 - 
+2022-03-26 17:01:14 DEBUG PersonController:112 - Obtention de la liste des enfants habitants � l'adresse.
+2022-03-26 17:01:14 ERROR PersonController:119 - 
+2022-03-26 17:01:14 INFO  FireStationsRepo:84 - []
+2022-03-26 17:01:16 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 17:01:17 INFO  FireStationsRepo:84 - []
+2022-03-26 17:01:17 INFO  FireStationsRepo:84 - []
+2022-03-26 17:01:20 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 17:01:20 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 17:01:20 INFO  FireStationsRepo:84 - [29 15th St, 892 Downing Ct, 951 LoneTree Rd]
+2022-03-26 17:01:20 INFO  FireStationsRepo:84 - [834 Binoc Ave, 748 Townings Dr, 112 Steppes Pl, 1509 Culver St]
+2022-03-26 17:01:20 INFO  FireStationsRepo:84 - [489 Manchester St, 112 Steppes Pl]
+2022-03-26 17:02:15 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 17:02:15 ERROR FireStationController:68 - 
+2022-03-26 17:02:15 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 17:02:15 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 17:02:15 ERROR FireStationController:36 - 
+2022-03-26 17:02:15 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donn�e.
+2022-03-26 17:02:15 ERROR FireStationController:124 - 
+2022-03-26 17:02:15 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant � l'adresse indiqu�.
+2022-03-26 17:02:15 INFO  FireStationController:94 - Liste trouv� pour /fire?address=
+2022-03-26 17:02:15 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 17:02:15 INFO  FireStationController:48 - La station a bien �t� modifier
+2022-03-26 17:02:15 DEBUG FireStationController:103 - Obtention de la liste des num�ros t�l�phone couvert par la station indiqu�.
+2022-03-26 17:02:15 INFO  FireStationController:107 - Liste trouv� pour /phoneAlert?firestation=
+2022-03-26 17:02:15 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 17:02:15 INFO  FireStationController:63 - La station a bien �t� supprimer
+2022-03-26 17:02:15 DEBUG FireStationController:76 - Obtention de la liste des personnes couverte par une station
+2022-03-26 17:02:15 INFO  FireStationController:80 - Liste de personnes couverte par la station obtenu.
+2022-03-26 17:02:15 DEBUG FireStationController:59 - Supprimer une station
+2022-03-26 17:02:15 ERROR FireStationController:65 - 
+2022-03-26 17:02:15 DEBUG FireStationController:90 - Obtention de la liste des personnes vivant � l'adresse indiqu�.
+2022-03-26 17:02:15 DEBUG FireStationController:44 - Modifier une station
+2022-03-26 17:02:15 DEBUG FireStationController:76 - Obtention de la liste des personnes couverte par une station
+2022-03-26 17:02:15 ERROR FireStationController:83 - 
+2022-03-26 17:02:15 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donn�e.
+2022-03-26 17:02:15 ERROR FireStationController:127 - 
+2022-03-26 17:02:15 DEBUG FireStationController:103 - Obtention de la liste des num�ros t�l�phone couvert par la station indiqu�.
+2022-03-26 17:02:15 ERROR FireStationController:110 - 
+2022-03-26 17:02:15 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 17:02:15 INFO  FireStationController:34 - La station a bien �t� ajouter
+2022-03-26 17:02:15 DEBUG FireStationController:30 - Ajouter une station
+2022-03-26 17:02:15 ERROR FireStationController:36 - 
+2022-03-26 17:02:15 DEBUG FireStationController:117 - Obtention de la liste des membres de chaque foyers desservies par une caserne donn�e.
+2022-03-26 17:02:15 INFO  FireStationController:121 - Listes des foyers obtenues pour /flood/stations?stations
+2022-03-26 17:02:16 DEBUG MedicalRecordController:62 - Supprimer un dossier m�dical
+2022-03-26 17:02:16 ERROR MedicalRecordController:68 - 
+2022-03-26 17:02:16 DEBUG MedicalRecordController:29 - Ajouter un dossier m�dical
+2022-03-26 17:02:16 ERROR MedicalRecordController:35 - 
+2022-03-26 17:02:16 DEBUG MedicalRecordController:44 - Modifier un dossier m�dicale
+2022-03-26 17:02:16 INFO  MedicalRecordController:48 - Le dossier a bien �t� modifier
+2022-03-26 17:02:16 DEBUG MedicalRecordController:44 - Modifier un dossier m�dicale
+2022-03-26 17:02:16 ERROR MedicalRecordController:50 - 
+2022-03-26 17:02:16 DEBUG MedicalRecordController:29 - Ajouter un dossier m�dical
+2022-03-26 17:02:16 ERROR MedicalRecordController:35 - 
+2022-03-26 17:02:16 DEBUG MedicalRecordController:62 - Supprimer un dossier m�dical
+2022-03-26 17:02:16 ERROR MedicalRecordController:71 - 
+2022-03-26 17:02:16 DEBUG MedicalRecordController:62 - Supprimer un dossier m�dical
+2022-03-26 17:02:16 INFO  MedicalRecordController:66 - Le dossier a bien �t� supprimer
+2022-03-26 17:02:16 DEBUG MedicalRecordController:29 - Ajouter un dossier m�dical
+2022-03-26 17:02:16 INFO  MedicalRecordController:33 - Le dossier m�dical a bien �t� ajouter
+2022-03-26 17:02:16 DEBUG MedicalRecordController:44 - Modifier un dossier m�dicale
+2022-03-26 17:02:16 ERROR MedicalRecordController:53 - 
+2022-03-26 17:02:16 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 17:02:16 INFO  PersonController:99 - Liste d'email trouv� pour la ville : Culver
+2022-03-26 17:02:16 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 17:02:16 ERROR PersonController:55 - 
+2022-03-26 17:02:16 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 17:02:16 ERROR PersonController:72 - 
+2022-03-26 17:02:16 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 17:02:16 ERROR PersonController:105 - 
+2022-03-26 17:02:16 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 17:02:16 ERROR PersonController:38 - 
+2022-03-26 17:02:16 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 17:02:16 INFO  PersonController:67 - La personne a bien �t� supprim� : Prenom Nom
+2022-03-26 17:02:16 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 17:02:16 INFO  PersonController:32 - La personne a �t� ajout�
+2022-03-26 17:02:16 DEBUG PersonController:63 - Supprimer une personne : /person with body : Person(firstName=Prenom, lastName=Nom, email=email@email.com, city=Culver, zip=232232, address=address, phone=0787475144)
+2022-03-26 17:02:16 ERROR PersonController:69 - 
+2022-03-26 17:02:16 DEBUG PersonController:112 - Obtention de la liste des enfants habitants � l'adresse.
+2022-03-26 17:02:16 INFO  PersonController:116 - R�sultat trouv� pour /childAlert
+2022-03-26 17:02:16 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 17:02:16 INFO  PersonController:50 - La personne a bien �t� modifier :{"zip":232232,"firstName":"Prenom","lastName":"Nom","address":"address","phone":"0787475144","city":"Culver","email":"email@email.com"}
+2022-03-26 17:02:16 DEBUG PersonController:28 - Ajouter une personne
+2022-03-26 17:02:16 ERROR PersonController:35 - 
+2022-03-26 17:02:16 DEBUG PersonController:46 - Modifier la personne
+2022-03-26 17:02:16 ERROR PersonController:52 - 
+2022-03-26 17:02:16 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 17:02:16 INFO  PersonController:85 - Liste de personne trouv� au nom de Boyd null
+2022-03-26 17:02:16 DEBUG PersonController:81 - GET information des personnes par nom
+2022-03-26 17:02:16 ERROR PersonController:88 - 
+2022-03-26 17:02:16 DEBUG PersonController:95 - Obtention d'une liste d'email de tout les habitants d'une ville
+2022-03-26 17:02:16 ERROR PersonController:102 - 
+2022-03-26 17:02:16 DEBUG PersonController:112 - Obtention de la liste des enfants habitants � l'adresse.
+2022-03-26 17:02:16 ERROR PersonController:119 - 
+2022-03-26 17:02:17 INFO  FireStationsRepo:84 - []
+2022-03-26 17:02:19 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 17:02:19 INFO  FireStationsRepo:84 - []
+2022-03-26 17:02:19 INFO  FireStationsRepo:84 - []
+2022-03-26 17:02:22 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 17:02:22 INFO  FireStationsRepo:84 - [644 Gershwin Cir, 908 73rd St, 947 E. Rose Dr]
+2022-03-26 17:02:22 INFO  FireStationsRepo:84 - [29 15th St, 892 Downing Ct, 951 LoneTree Rd]
+2022-03-26 17:02:22 INFO  FireStationsRepo:84 - [834 Binoc Ave, 748 Townings Dr, 112 Steppes Pl, 1509 Culver St]
+2022-03-26 17:02:22 INFO  FireStationsRepo:84 - [489 Manchester St, 112 Steppes Pl]

@@ -31,7 +31,7 @@ public class FireStationController {
         JSONObject response;
         try {
             response = fireStationsService.addFireStation(fireStation);
-            log.info("La station a bien été ajouté : " + response.toString());
+            log.info("La station a bien été ajouter");
         } catch (InvalidInputException | AlreadyExistException e) {
             log.error(e.getMessage());
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST ,e.getMessage());
@@ -45,7 +45,7 @@ public class FireStationController {
         JSONObject response;
         try {
             response = fireStationsService.modifyFireStation(fireStation);
-            log.info("La station a bien été modifié : " + response.toString());
+            log.info("La station a bien été modifier" );
         } catch (InvalidInputException e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,e.getMessage());
         } catch (NotFoundException e) {
@@ -60,7 +60,7 @@ public class FireStationController {
         JSONArray response;
         try {
             response =  fireStationsService.deleteFireStation(fireStation);
-            log.info("La station a bien été supprimé");
+            log.info("La station a bien été supprimer");
         } catch (InvalidInputException e ) {
             log.error(e.getMessage());
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,e.getMessage());
@@ -77,7 +77,7 @@ public class FireStationController {
         JSONObject response;
         try {
             response = fireStationsService.getPersonByStation(stationNumber);
-            log.info("La station a bien été supprimé");
+            log.info("Liste de personnes couverte par la station obtenu.");
             return new ResponseEntity(response, HttpStatus.OK);
         } catch (NotFoundException e) {
             log.error(e.getMessage());
@@ -91,7 +91,7 @@ public class FireStationController {
         JSONObject response;
         try {
             response = fireStationsService.getPersonByAddress(address);
-            log.info("Liste trouvé pour /fire?address=" + address);
+            log.info("Liste trouvé pour /fire?address=");
             return new ResponseEntity(response, HttpStatus.OK);
         } catch (NotFoundException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
@@ -104,7 +104,7 @@ public class FireStationController {
         JSONArray response;
         try {
             response = fireStationsService.getPhoneAlert(firestation);
-            log.info("Liste trouvé pour /phoneAlert?firestation=" + firestation);
+            log.info("Liste trouvé pour /phoneAlert?firestation=");
             return new ResponseEntity(response, HttpStatus.OK);
         } catch (NotFoundException e) {
             log.error(e.getMessage());
