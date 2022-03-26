@@ -1,6 +1,7 @@
 package fr.safetynet.alerts.repository;
 
 import fr.safetynet.alerts.models.MedicalRecord;
+import fr.safetynet.alerts.models.Person;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,7 @@ public class MedicalRecordsRepo {
     public static MedicalRecord modifyMedicalRecord(MedicalRecord medicalRecord) {
         int i = 0;
         for (MedicalRecord medicalRecordEntity : medicalRecords) {
-            if (medicalRecordEntity.getFirstName() == medicalRecordEntity.getFirstName() && medicalRecordEntity.getLastName() == medicalRecordEntity.getLastName()) {
+            if (medicalRecordEntity.getFirstName().equals(medicalRecord.getFirstName()) && medicalRecordEntity.getLastName().equals(medicalRecord.getLastName())) {
                 medicalRecords.set(i, medicalRecord);
                 return medicalRecord;
             }
@@ -39,8 +40,6 @@ public class MedicalRecordsRepo {
 
     public static MedicalRecord getMedicalRecordByName(String firstName, String lastName) {
         MedicalRecord medicalRecordToSearch = new MedicalRecord();
-        medicalRecordToSearch.setFirstName(firstName);
-        medicalRecordToSearch.setLastName(lastName);
         for (MedicalRecord medicalRecord : medicalRecords) {
             if (medicalRecord.getFirstName().equals(firstName) && medicalRecord.getLastName().equals(lastName)) {
                 return medicalRecord;

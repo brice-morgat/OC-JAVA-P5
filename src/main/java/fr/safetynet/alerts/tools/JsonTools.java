@@ -1,10 +1,14 @@
 package fr.safetynet.alerts.tools;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.safetynet.alerts.models.FireStation;
 import fr.safetynet.alerts.repository.FireStationsRepo;
 import fr.safetynet.alerts.repository.MedicalRecordsRepo;
 import fr.safetynet.alerts.repository.PersonsRepo;
 import fr.safetynet.alerts.models.MedicalRecord;
 import fr.safetynet.alerts.models.Person;
+import fr.safetynet.alerts.service.FireStationsService;
+import fr.safetynet.alerts.service.MedicalRecordsService;
+import fr.safetynet.alerts.service.PersonsService;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -12,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 @Service
@@ -20,8 +25,19 @@ public class JsonTools {
     FireStationsRepo fireStationsRepo = new FireStationsRepo();
     MedicalRecordsRepo medicalRecordsRepo = new MedicalRecordsRepo();
 
+    private final FireStationsService fireStationsService;
+    private final MedicalRecordsService medicalRecordsService;
+    private final PersonsService personsService;
+
+    public JsonTools(FireStationsService fireStationsService, MedicalRecordsService medicalRecordsService, PersonsService personsService) {
+        this.fireStationsService = fireStationsService;
+        this.medicalRecordsService = medicalRecordsService;
+        this.personsService = personsService;
+    }
+
+
     @PostConstruct
-    public void parsePerson() {
+    private void parsePerson() {
         JSONParser parser = new JSONParser();
         try {
             Object obj = parser
@@ -39,7 +55,9 @@ public class JsonTools {
                 entityPerson.setAddress(person.get("address").toString());
                 entityPerson.setCity(person.get("city").toString());
                 entityPerson.setPhone(person.get("phone").toString());
-                personsRepo.persons.add(entityPerson);
+                if(!personsService.alreadyExist(entityPerson)) {
+                    personsRepo.persons.add(entityPerson);
+                }
             }
             System.out.println(personsRepo.persons);
         } catch (Exception e) {
@@ -63,7 +81,9 @@ public class JsonTools {
                 FireStation entityFireStation = new FireStation();
                 entityFireStation.setAddress(firestation.get("address").toString());
                 entityFireStation.setStation(Integer.parseInt(firestation.get("station").toString()));
-                fireStationsRepo.fireStations.add(entityFireStation);
+                if(!fireStationsService.alreadyExist(entityFireStation)) {
+                    fireStationsRepo.fireStations.add(entityFireStation);
+                }
             }
            System.out.println(fireStationsRepo.fireStations);
         } catch (Exception e) {
@@ -82,19 +102,34 @@ public class JsonTools {
             JSONArray medicalrecords = (JSONArray) jsonObject.get("medicalrecords");
 
             Iterator<JSONObject> iterator = medicalrecords.iterator();
+
             while (iterator.hasNext()) {
                 JSONObject medicalrecord = iterator.next();
                 MedicalRecord entityMedicalRecords = new MedicalRecord();
                 entityMedicalRecords.setFirstName(medicalrecord.get("firstName").toString());
                 entityMedicalRecords.setLastName(medicalrecord.get("lastName").toString());
                 entityMedicalRecords.setBirthdate(medicalrecord.get("birthdate").toString());
-                entityMedicalRecords.setAllergies(medicalrecord.get("allergies").toString());
-                entityMedicalRecords.setMedications(medicalrecord.get("medications").toString());
-                medicalRecordsRepo.medicalRecords.add(entityMedicalRecords);
+                entityMedicalRecords.setAllergies(allergiesToList(medicalrecord.get("allergies").toString()));
+                entityMedicalRecords.setMedications(medicationsToList(medicalrecord.get("medications").toString()));
+                if(!medicalRecordsService.alreadyExist(entityMedicalRecords)) {
+                    medicalRecordsRepo.medicalRecords.add(entityMedicalRecords);
+                }
             }
             System.out.println(medicalRecordsRepo.medicalRecords);
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private List<String> medicationsToList(String medications) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        List<String> result = mapper.readValue(medications.getBytes(), List.class);
+        return result;
+    }
+
+    public List<String> allergiesToList(String allergies) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        List<String> result = mapper.readValue(allergies.getBytes(), List.class);
+        return result;
     }
 }
