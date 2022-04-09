@@ -1,16 +1,18 @@
 package fr.safetynet.alerts.integrations;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import fr.safetynet.alerts.exceptions.AlreadyExistException;
-import fr.safetynet.alerts.exceptions.InvalidInputException;
-import fr.safetynet.alerts.exceptions.NotFoundException;
-import fr.safetynet.alerts.models.MedicalRecord;
+import fr.safetynet.alerts.service.FireStationsService;
+import fr.safetynet.alerts.service.MedicalRecordsService;
+import fr.safetynet.alerts.service.PersonsService;
+import fr.safetynet.alerts.tools.JsonTools;
 import org.json.simple.JSONObject;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
@@ -19,14 +21,28 @@ import java.util.ArrayList;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.hamcrest.Matchers.*;
+
 
 @SpringBootTest
-@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 @AutoConfigureMockMvc
 public class MedicalRecordsControllerIT {
     @Autowired
     private MockMvc mockMvc;
+
+    @MockBean
+    JsonTools jsonTools;
+
+    @BeforeEach
+    void prepareTest() {
+        jsonTools = new JsonTools(new FireStationsService(), new MedicalRecordsService(), new PersonsService());
+        jsonTools.parseFireStations();
+        jsonTools.parseMedicalRecords();
+        jsonTools.parsePerson();
+    }
+
 
     @Test
     public void testAddMedicalRecord() throws Exception {
@@ -38,7 +54,10 @@ public class MedicalRecordsControllerIT {
         input.put("medications", list);
         input.put("allergies", list);
         mockMvc.perform(post("/medicalRecord").content(asJsonString(input)).contentType(MediaType.APPLICATION_JSON)
-                .accept(MediaType.APPLICATION_JSON)).andExpect(status().isCreated());
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("firstName", is("Prenom")))
+                .andExpect(jsonPath("$.*", hasSize(5)));
     }
 
     @Test
@@ -77,7 +96,10 @@ public class MedicalRecordsControllerIT {
         input.put("medications", list);
         input.put("allergies", list);
         mockMvc.perform(put("/medicalRecord").content(asJsonString(input)).contentType(MediaType.APPLICATION_JSON)
-                .accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+                .accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
+                .andExpect(jsonPath("$.*", hasSize(5)))
+                .andExpect(jsonPath("firstName", is("John")))
+                .andExpect(jsonPath("birthdate", is("01/12/2001")));
     }
 
     @Test
@@ -116,7 +138,10 @@ public class MedicalRecordsControllerIT {
         input.put("medications", list);
         input.put("allergies", list);
         mockMvc.perform(delete("/medicalRecord").content(asJsonString(input)).contentType(MediaType.APPLICATION_JSON)
-                .accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.*", hasSize(5)))
+                .andExpect(jsonPath("firstName", is("John")));
     }
 
     @Test

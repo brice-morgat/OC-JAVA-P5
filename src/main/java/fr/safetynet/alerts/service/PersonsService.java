@@ -17,16 +17,17 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Service;
 
-import java.time.DateTimeException;
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
 public class PersonsService {
     private static Logger log = Logger.getLogger(PersonsService.class);
 
+    /**
+     * Add Person
+     * @param person
+     * @return person added
+     */
     public JSONObject addPerson(Person person) throws ParseException {
         //Parser le person pour vérifier que les champs soit valide
         if (person.firstName != null && person.lastName != null && person.address != null && person.city != null && person.zip != null && person.phone != null && person.email != null) {
@@ -43,6 +44,11 @@ public class PersonsService {
         }
     }
 
+    /**
+     * Modify Person
+     * @param person
+     * @return person modified
+     */
     public JSONObject modifyPerson(Person person) throws ParseException {
         if (person.firstName != null && person.lastName != null && person.address != null && person.city != null && person.zip != null && person.phone != null && person.email != null) {
             Person result = PersonsRepo.modifyPerson(person);
@@ -58,6 +64,11 @@ public class PersonsService {
         }
     }
 
+    /**
+     * Delete a person
+     * @param person
+     * @return person deleted
+     */
     public JSONObject deletePerson(Person person) {
         JSONObject response = new JSONObject();
         if (person.firstName != null && person.lastName != null) {
@@ -74,18 +85,29 @@ public class PersonsService {
         }
     }
 
+    /**
+     * Get Person info
+     * @param firstName
+     * @param lastName
+     * @return list of person by lastname or person by firstname and lastname
+     */
     public JSONArray getPersonsInfo(String firstName, String lastName) {
         JSONArray response = new JSONArray();
         List<Person> persons = PersonsRepo.getPersonsByName(firstName, lastName);
         if (!persons.isEmpty()) {
             for (Person person: persons) {
                 JSONObject personResult = new JSONObject();
-                MedicalRecord personMedicalRecord =  MedicalRecordsRepo.getMedicalRecordByName(person.firstName, person.lastName);
+                MedicalRecord personMedicalRecord =  MedicalRecordsRepo.getMedicalRecordByNameAndFirstName(person.firstName, person.lastName);
                 personResult.put("lastName", person.lastName);
                 personResult.put("address", person.address);
-                personResult.put("age", CalculTools.ageParser(personMedicalRecord.birthdate));
+                int age = 100;
+                if (personMedicalRecord.getFirstName() != null) {
+                    age = CalculTools.ageParser(personMedicalRecord.birthdate);
+                }
+                personResult.put("age", age);
                 personResult.put("email", person.email);
                 personResult.put("medications", personMedicalRecord.medications);
+                personResult.put("allergies", personMedicalRecord.allergies);
                 response.add(personResult);
             }
             return response;
@@ -94,6 +116,11 @@ public class PersonsService {
         }
     }
 
+    /**
+     * Get Community Email
+     * @param city
+     * @return Email list of person living in the city
+     */
     public JSONArray getCommunityEmail(String city) {
         if (city != null && !city.equals("")) {
             JSONArray response = new JSONArray();
@@ -112,6 +139,11 @@ public class PersonsService {
         }
     }
 
+    /**
+     * Get Child By Address
+     * @param address
+     * @return if there are child(ren), return a list of child living at the address, else return empty
+     */
     public JSONObject getChildByAddress(String address) {
         JSONObject response = new JSONObject();
         JSONArray persons = new JSONArray();
@@ -122,7 +154,7 @@ public class PersonsService {
         if (!personList.isEmpty()) {
             for (Person person : personList) {
                 JSONObject entity = new JSONObject();
-                MedicalRecord personMedicalRecord =  MedicalRecordsRepo.getMedicalRecordByName(person.firstName, person.lastName);
+                MedicalRecord personMedicalRecord =  MedicalRecordsRepo.getMedicalRecordByNameAndFirstName(person.firstName, person.lastName);
                 entity.put("firstName", person.firstName);
                 entity.put("lastName", person.lastName);
                 int age = 100;
@@ -150,6 +182,11 @@ public class PersonsService {
         }
     }
 
+    /**
+     * Verify if a person already exist
+     * @param person
+     * @return boolean
+     */
     public boolean alreadyExist(Person person) {
         int i = 0;
         for (Person entity : PersonsRepo.persons) {

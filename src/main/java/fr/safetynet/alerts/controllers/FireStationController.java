@@ -16,6 +16,9 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
+/**
+ * FireStation Controller
+ */
 @RestController
 public class FireStationController {
     private final FireStationsService fireStationsService;
@@ -25,6 +28,11 @@ public class FireStationController {
         this.fireStationsService = fireStationsService;
     }
 
+    /**
+     * Add FireStation
+     * @param fireStation
+     * @return
+     */
     @PostMapping("/firestation")
     public ResponseEntity addFireStation(@RequestBody FireStation fireStation) {
         log.debug("Ajouter une station");
@@ -39,6 +47,11 @@ public class FireStationController {
         return new ResponseEntity(response, HttpStatus.CREATED);
     }
 
+    /**
+     * Modify FireStation
+     * @param fireStation
+     * @return
+     */
     @PutMapping("/firestation")
     public ResponseEntity modifyFireStation(@RequestBody FireStation fireStation) throws ParseException {
         log.debug("Modifier une station");
@@ -54,6 +67,11 @@ public class FireStationController {
         return new ResponseEntity(response, HttpStatus.OK);
     }
 
+    /**
+     *
+     * @param fireStation
+     * @return
+     */
     @DeleteMapping("/firestation")
     public ResponseEntity deleteFireStation(@RequestBody JSONObject fireStation) throws ParseException {
         log.debug("Supprimer une station");
@@ -71,6 +89,11 @@ public class FireStationController {
         return new ResponseEntity(response, HttpStatus.OK);
     }
 
+    /**
+     * Get Person By Station
+     * @param stationNumber
+     * @return
+     */
     @GetMapping("/firestation")
     public ResponseEntity getPersonByStation(@RequestParam int stationNumber) {
         log.debug("Obtention de la liste des personnes couverte par une station");
@@ -85,6 +108,11 @@ public class FireStationController {
         }
     }
 
+    /**
+     * Get list of persons living at the address
+     * @param address
+     * @return
+     */
     @GetMapping("/fire")
     public ResponseEntity fireAddress(@RequestParam String address) {
         log.debug("Obtention de la liste des personnes vivant à l'adresse indiqué.");
@@ -98,6 +126,11 @@ public class FireStationController {
         }
     }
 
+    /**
+     * Phone Alert
+     * @param firestation
+     * @return
+     */
     @GetMapping("/phoneAlert")
     public ResponseEntity phoneAlert(@RequestParam int firestation) {
         log.debug("Obtention de la liste des numéros téléphone couvert par la station indiqué.");
@@ -112,6 +145,12 @@ public class FireStationController {
         }
     }
 
+    /**
+     * Flood Stations
+     * Get list of all person covered by the station and the number of child and adults of this list
+     * @param stations
+     * @return
+     */
     @GetMapping("/flood/stations")
     public ResponseEntity floodStations(@RequestParam Integer[] stations) {
         log.debug("Obtention de la liste des membres de chaque foyers desservies par une caserne donnée.");

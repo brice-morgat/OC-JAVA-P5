@@ -14,6 +14,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+/**
+ * MedicalRecord Controller
+ */
 @RestController
 public class MedicalRecordController {
     private final MedicalRecordsService medicalRecordsService;
@@ -24,6 +27,11 @@ public class MedicalRecordController {
         this.medicalRecordsService = medicalRecordsService;
     }
 
+    /**
+     * Add medical record
+     * @param medicalRecord
+     * @return
+     */
     @PostMapping("/medicalRecord")
     public ResponseEntity addMedicalRecord(@RequestBody MedicalRecord medicalRecord) throws ParseException {
         log.debug("Ajouter un dossier médical");
@@ -38,6 +46,11 @@ public class MedicalRecordController {
         return new ResponseEntity(response, HttpStatus.CREATED);
     }
 
+    /**
+     * Modify Medical Record
+     * @param medicalRecord
+     * @return
+     */
     @PutMapping("/medicalRecord")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity modifyMedicalRecord(@RequestBody MedicalRecord medicalRecord) throws ParseException {
@@ -56,6 +69,11 @@ public class MedicalRecordController {
         return new ResponseEntity(response, HttpStatus.OK);
     }
 
+    /**
+     * Delete Medical Record
+     * @param medicalRecord
+     * @return
+     */
     @DeleteMapping("/medicalRecord")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity deleteMedicalRecord(@RequestBody MedicalRecord medicalRecord) throws ParseException {

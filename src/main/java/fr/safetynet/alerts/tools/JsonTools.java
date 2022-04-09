@@ -21,9 +21,9 @@ import java.util.*;
 
 @Service
 public class JsonTools {
-    PersonsRepo personsRepo = new PersonsRepo();
-    FireStationsRepo fireStationsRepo = new FireStationsRepo();
-    MedicalRecordsRepo medicalRecordsRepo = new MedicalRecordsRepo();
+    PersonsRepo personsRepo = PersonsRepo.getInstance();
+    FireStationsRepo fireStationsRepo = FireStationsRepo.getInstance();
+    MedicalRecordsRepo medicalRecordsRepo = MedicalRecordsRepo.getInstance();
 
     private final FireStationsService fireStationsService;
     private final MedicalRecordsService medicalRecordsService;
@@ -35,9 +35,15 @@ public class JsonTools {
         this.personsService = personsService;
     }
 
-
     @PostConstruct
-    private void parsePerson() {
+    private void init() {
+        parsePerson();
+        parseFireStations();
+        parseMedicalRecords();
+    }
+
+    public void parsePerson() {
+        personsRepo.clearPersons();
         JSONParser parser = new JSONParser();
         try {
             Object obj = parser
@@ -65,8 +71,8 @@ public class JsonTools {
         }
     }
 
-    @PostConstruct
-    private void parseFireStations() {
+    public void parseFireStations() {
+        fireStationsRepo.clearFireStations();
         JSONParser parser = new JSONParser();
         try {
             Object obj = parser
@@ -82,17 +88,17 @@ public class JsonTools {
                 entityFireStation.setAddress(firestation.get("address").toString());
                 entityFireStation.setStation(Integer.parseInt(firestation.get("station").toString()));
                 if(!fireStationsService.alreadyExist(entityFireStation)) {
-                    fireStationsRepo.fireStations.add(entityFireStation);
+                    fireStationsRepo.getFireStations().add(entityFireStation);
                 }
             }
-           System.out.println(fireStationsRepo.fireStations);
+           System.out.println(fireStationsRepo.getFireStations());
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    @PostConstruct
-    private void parseMedicalRecords() {
+    public void parseMedicalRecords() {
+        medicalRecordsRepo.clearMedicalRecords();
         JSONParser parser = new JSONParser();
         try {
             Object obj = parser

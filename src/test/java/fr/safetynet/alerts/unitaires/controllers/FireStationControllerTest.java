@@ -2,12 +2,10 @@ package fr.safetynet.alerts.unitaires.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.safetynet.alerts.controllers.FireStationController;
-import fr.safetynet.alerts.controllers.MedicalRecordController;
 import fr.safetynet.alerts.exceptions.AlreadyExistException;
 import fr.safetynet.alerts.exceptions.InvalidInputException;
 import fr.safetynet.alerts.exceptions.NotFoundException;
 import fr.safetynet.alerts.models.FireStation;
-import fr.safetynet.alerts.models.Person;
 import fr.safetynet.alerts.service.FireStationsService;
 import org.json.simple.JSONObject;
 import org.junit.jupiter.api.Test;
