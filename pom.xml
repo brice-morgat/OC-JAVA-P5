@@ -8,6 +8,18 @@
         <version>2.6.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <developers>
+        <developer>
+            <name>Brice Morgat</name>
+            <organization>Openclassrooms</organization>
+            <organizationUrl>http://185.216.25.182</organizationUrl>
+            <roles>
+                <role>Développeur d'application</role>
+            </roles>
+            <timezone>Europe/Paris</timezone>
+        </developer>
+    </developers>
+
     <groupId>fr.safetynet</groupId>
     <artifactId>alerts</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -80,6 +92,7 @@
                 <configuration>
                 <!-- Je veux le site en français -->
                 <locales>fr</locales>
+
             </configuration>
             </plugin>
             <plugin>

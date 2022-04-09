@@ -14,6 +14,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+/**
+ * Person Controller
+ */
 @RestController
 public class PersonController {
     private final PersonsService personsService;
@@ -23,6 +26,11 @@ public class PersonController {
         this.personsService = personsService;
     }
 
+    /**
+     * Add Person
+     * @param person
+     * @return
+     */
     @PostMapping("/person")
     public ResponseEntity addPerson(@RequestBody Person person) throws Exception {
         log.debug("Ajouter une personne");
@@ -41,6 +49,11 @@ public class PersonController {
         return new ResponseEntity(response, HttpStatus.CREATED);
     }
 
+    /**
+     * Modify Person
+     * @param person
+     * @return
+     */
     @PutMapping("/person")
     public ResponseEntity modifyPerson(@RequestBody Person person) throws ParseException {
         log.debug("Modifier la personne");
@@ -58,6 +71,11 @@ public class PersonController {
         return new ResponseEntity(response, HttpStatus.OK);
     }
 
+    /**
+     * Delete Person
+     * @param person
+     * @return
+     */
     @DeleteMapping("/person")
     public ResponseEntity deletePerson(@RequestBody Person person) {
         log.debug("Supprimer une personne : /person with body : " + person.toString());
@@ -75,6 +93,12 @@ public class PersonController {
         return new ResponseEntity(response, HttpStatus.OK);
     }
 
+    /**
+     * Get Person Info
+     * @param firstName
+     * @param lastName
+     * @return
+     */
     @GetMapping("/personInfo")
     @ResponseBody
     public ResponseEntity getPersonInfo(@RequestParam(required = false) String firstName, @RequestParam String lastName) {
@@ -90,6 +114,11 @@ public class PersonController {
         }
     }
 
+    /**
+     * Get Community Email
+     * @param city
+     * @return
+     */
     @GetMapping("/communityEmail")
     public ResponseEntity getCommunityEmail(@RequestParam String city) {
         log.debug("Obtention d'une liste d'email de tout les habitants d'une ville");
@@ -107,6 +136,11 @@ public class PersonController {
         }
     }
 
+    /**
+     * Get Child alert
+     * @param address
+     * @return
+     */
     @GetMapping("/childAlert")
     public ResponseEntity getChildAlert(@RequestParam String address) {
         log.debug("Obtention de la liste des enfants habitants à l'adresse.");

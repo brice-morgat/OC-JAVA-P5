@@ -7,13 +7,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MedicalRecordsRepo {
-    public static List<MedicalRecord> medicalRecords = new ArrayList<>();
+    private static MedicalRecordsRepo instance;
+    public static List<MedicalRecord> medicalRecords;
 
+    private MedicalRecordsRepo() {
+        medicalRecords = new ArrayList<>();
+    }
+
+    public static MedicalRecordsRepo getInstance() {
+        if (instance == null) {
+            instance = new MedicalRecordsRepo();
+        }
+        return instance;
+    }
+
+    public void clearMedicalRecords() {
+        medicalRecords.clear();
+    }
+
+    /**
+     * Add medicalRecord
+     * @param medicalRecord
+     * @return
+     */
     public static MedicalRecord addMedicalRecord(MedicalRecord medicalRecord) {
         medicalRecords.add(medicalRecord);
         return medicalRecord;
     }
 
+    /**
+     * Delete Medical Record
+     * @param firstName
+     * @param lastName
+     * @return
+     */
     public static MedicalRecord deleteMedicalRecord(String firstName, String lastName) {
         int i = 0;
         for (MedicalRecord medicalRecord : medicalRecords) {
@@ -26,6 +53,11 @@ public class MedicalRecordsRepo {
         return null;
     }
 
+    /**
+     * Modify MedicalRecord
+     * @param medicalRecord
+     * @return
+     */
     public static MedicalRecord modifyMedicalRecord(MedicalRecord medicalRecord) {
         int i = 0;
         for (MedicalRecord medicalRecordEntity : medicalRecords) {
@@ -38,7 +70,13 @@ public class MedicalRecordsRepo {
         return null;
     }
 
-    public static MedicalRecord getMedicalRecordByName(String firstName, String lastName) {
+    /**
+     * Get MedicalRecord By Name and Firstname
+     * @param firstName
+     * @param lastName
+     * @return
+     */
+    public static MedicalRecord getMedicalRecordByNameAndFirstName(String firstName, String lastName) {
         MedicalRecord medicalRecordToSearch = new MedicalRecord();
         for (MedicalRecord medicalRecord : medicalRecords) {
             if (medicalRecord.getFirstName().equals(firstName) && medicalRecord.getLastName().equals(lastName)) {

@@ -1,26 +1,52 @@
 package fr.safetynet.alerts.repository;
 
-import fr.safetynet.alerts.controllers.FireStationController;
 import fr.safetynet.alerts.models.FireStation;
-import fr.safetynet.alerts.models.Person;
 import org.apache.log4j.Logger;
-import org.json.simple.JSONArray;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 public class FireStationsRepo {
-    public static List<FireStation> fireStations = new ArrayList<>();
+    private static FireStationsRepo instance;
+    private List<FireStation> fireStations;
     private static Logger log = Logger.getLogger(FireStationsRepo.class);
 
+    private FireStationsRepo() {
+        fireStations = new ArrayList<>();
+    }
 
-    public static FireStation addFireStation(FireStation fireStation) {
+    public static FireStationsRepo getInstance() {
+        if (instance == null) {
+            instance = new FireStationsRepo();
+        }
+        return instance;
+    }
+
+    public void clearFireStations() {
+        fireStations.clear();
+    }
+
+    public List<FireStation> getFireStations() {
+        return fireStations;
+    }
+
+    /**
+     * Add fireStation
+     * @param fireStation
+     * @return
+     */
+    public FireStation addFireStation(FireStation fireStation) {
         fireStations.add(fireStation);
         return fireStation;
     }
 
-    public static List<FireStation> removeFireStation(FireStation fireStation) {
+    /**
+     * Remove FireStation
+     * @param fireStation
+     * @return
+     */
+    public List<FireStation> removeFireStation(FireStation fireStation) {
         List<FireStation> listDeletedFireStation = new ArrayList();
         int i = 0;
         if (fireStation.station != null && fireStation.address != null) {
@@ -53,7 +79,12 @@ public class FireStationsRepo {
         return null;
     }
 
-    public static FireStation modifyFireStations(FireStation fireStation) {
+    /**
+     * Modify FireStation
+     * @param fireStation
+     * @return
+     */
+    public FireStation modifyFireStations(FireStation fireStation) {
         int i = 0;
         for (FireStation fireStationEntity : fireStations) {
             if (fireStationEntity.getAddress().equals(fireStation.address) && fireStation.station != null) {
@@ -65,7 +96,12 @@ public class FireStationsRepo {
         return null;
     }
 
-    public static int getFireStationNumberByAddress(String address) {
+    /**
+     * Get FireStation's number by address
+     * @param address
+     * @return
+     */
+    public int getFireStationNumberByAddress(String address) {
         for(FireStation fireStation: fireStations) {
             if (fireStation.getAddress().equals(address)) {
                 return fireStation.getStation();
@@ -74,7 +110,12 @@ public class FireStationsRepo {
         return 0;
     }
 
-    public static List getListAddressByStationNumber(int station_number) {
+    /**
+     * Get List Address by Station's number
+     * @param station_number
+     * @return
+     */
+    public List getListAddressByStationNumber(int station_number) {
         List addresses = new ArrayList();
         for (FireStation fireStation: fireStations) {
             if (fireStation.getStation().equals(station_number)) {

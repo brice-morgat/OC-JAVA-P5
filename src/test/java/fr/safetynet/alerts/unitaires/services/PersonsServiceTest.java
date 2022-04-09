@@ -4,23 +4,37 @@ import fr.safetynet.alerts.exceptions.AlreadyExistException;
 import fr.safetynet.alerts.exceptions.InvalidInputException;
 import fr.safetynet.alerts.exceptions.NotFoundException;
 import fr.safetynet.alerts.models.Person;
+import fr.safetynet.alerts.service.FireStationsService;
+import fr.safetynet.alerts.service.MedicalRecordsService;
 import fr.safetynet.alerts.service.PersonsService;
+import fr.safetynet.alerts.tools.JsonTools;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class PersonsServiceTest {
 
     @Autowired
     private PersonsService personsService;
+
+    @MockBean
+    JsonTools jsonTools;
+
+    @BeforeEach
+    void prepareTest() {
+        jsonTools = new JsonTools(new FireStationsService(), new MedicalRecordsService(), new PersonsService());
+        jsonTools.parseFireStations();
+        jsonTools.parseMedicalRecords();
+        jsonTools.parsePerson();
+    }
 
     @Test
     public void getPersonInfoTest() {

@@ -1,27 +1,52 @@
 package fr.safetynet.alerts.integrations;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import fr.safetynet.alerts.service.FireStationsService;
+import fr.safetynet.alerts.service.MedicalRecordsService;
+import fr.safetynet.alerts.service.PersonsService;
+import fr.safetynet.alerts.tools.JsonTools;
 import org.json.simple.JSONObject;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.hamcrest.Matchers.*;
+
 
 @SpringBootTest
-@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 @AutoConfigureMockMvc
 public class PersonControllerIT {
+
     @Autowired
     private MockMvc mockMvc;
 
+    @MockBean
+    JsonTools jsonTools;
+
+    @BeforeEach
+    void prepareTest() {
+        jsonTools = new JsonTools(new FireStationsService(), new MedicalRecordsService(), new PersonsService());
+        jsonTools.parseFireStations();
+        jsonTools.parseMedicalRecords();
+        jsonTools.parsePerson();
+    }
+
     @Test
     public void testGetPersonInfoIsOk() throws Exception {
-        mockMvc.perform(get("/personInfo?lastName=Boyd")).andExpect(status().isOk());
+        mockMvc.perform(get("/personInfo?lastName=Boyd"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.*", hasSize(6)))
+                .andExpect(jsonPath("$.[0].*", hasSize(6)))
+                .andExpect(jsonPath("$.[0].age", is(37)));
+
     }
 
     @Test
@@ -37,7 +62,9 @@ public class PersonControllerIT {
 
     @Test
     public void testGetCommunityEmail() throws Exception {
-        mockMvc.perform(get("/communityEmail?city=Culver")).andExpect(status().isOk());
+        mockMvc.perform(get("/communityEmail?city=Culver"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.*", hasSize(15)));
     }
 
     @Test
@@ -52,7 +79,12 @@ public class PersonControllerIT {
 
     @Test
     public void testChildAlert() throws Exception {
-        mockMvc.perform(get("/childAlert?address=1509 Culver St")).andExpect(status().isOk());
+        mockMvc.perform(get("/childAlert?address=1509 Culver St"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.*", hasSize(2)))
+                .andExpect(jsonPath("$.children", hasSize(2)))
+                .andExpect(jsonPath("$.other", hasSize(3)))
+                .andExpect(jsonPath("$.children.[0].firstName", is("Tenley")));
     }
 
     @Test
@@ -71,7 +103,10 @@ public class PersonControllerIT {
         input.put("zip", 232232);
         input.put("city", "Culver");
         mockMvc.perform(post("/person").content(asJsonString(input)).contentType(MediaType.APPLICATION_JSON)
-                .accept(MediaType.APPLICATION_JSON)).andExpect(status().isCreated());
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.*", hasSize(7)))
+                .andExpect(jsonPath("$.firstName", is("Prenom")));
     }
 
     @Test
@@ -105,15 +140,18 @@ public class PersonControllerIT {
     @Test
     public void testModifyPerson() throws Exception {
         JSONObject input = new JSONObject();
-        input.put("firstName", "Prenom");
-        input.put("lastName","Nom");
+        input.put("firstName", "John");
+        input.put("lastName","Boyd");
         input.put("address","address");
         input.put("email", "email@email.com");
         input.put("phone", "0787475144");
         input.put("zip", 232232);
         input.put("city", "Culver");
         mockMvc.perform(put("/person").content(asJsonString(input)).contentType(MediaType.APPLICATION_JSON)
-                .accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.*", hasSize(7)))
+                .andExpect(jsonPath("$.firstName", is("John")));
     }
 
     @Test
@@ -155,7 +193,9 @@ public class PersonControllerIT {
         input.put("zip", 232232);
         input.put("city", "Culver");
         mockMvc.perform(delete("/person").content(asJsonString(input)).contentType(MediaType.APPLICATION_JSON)
-                .accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+                .accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
+                .andExpect(jsonPath("$.*", hasSize(2)))
+                .andExpect(jsonPath("$.firstName", is("John")));
     }
 
     @Test

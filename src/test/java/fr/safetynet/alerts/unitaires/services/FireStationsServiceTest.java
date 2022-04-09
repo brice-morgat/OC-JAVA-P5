@@ -6,22 +6,38 @@ import fr.safetynet.alerts.exceptions.InvalidInputException;
 import fr.safetynet.alerts.exceptions.NotFoundException;
 import fr.safetynet.alerts.models.FireStation;
 import fr.safetynet.alerts.service.FireStationsService;
+import fr.safetynet.alerts.service.MedicalRecordsService;
+import fr.safetynet.alerts.service.PersonsService;
+import fr.safetynet.alerts.tools.JsonTools;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.mockito.internal.matchers.Not;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.annotation.DirtiesContext;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class FireStationsServiceTest {
 
     @Autowired
     private FireStationsService fireStationsService;
+
+    @MockBean
+    JsonTools jsonTools;
+
+    @BeforeEach
+    void prepareTest() {
+        jsonTools = new JsonTools(new FireStationsService(), new MedicalRecordsService(), new PersonsService());
+        jsonTools.parseFireStations();
+        jsonTools.parsePerson();
+    }
 
     @Test
     public void addFireStationTest() {

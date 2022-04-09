@@ -5,23 +5,38 @@ import fr.safetynet.alerts.exceptions.InvalidInputException;
 import fr.safetynet.alerts.exceptions.NotFoundException;
 import fr.safetynet.alerts.models.MedicalRecord;
 import fr.safetynet.alerts.repository.MedicalRecordsRepo;
+import fr.safetynet.alerts.service.FireStationsService;
 import fr.safetynet.alerts.service.MedicalRecordsService;
+import fr.safetynet.alerts.service.PersonsService;
+import fr.safetynet.alerts.tools.JsonTools;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 
 @SpringBootTest
-@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class MedicalRecordsServiceTest {
     @Autowired
     private MedicalRecordsService medicalRecordsService;
+
+    @MockBean
+    JsonTools jsonTools;
+
+    @BeforeEach
+    void prepareTest() {
+        jsonTools = new JsonTools(new FireStationsService(), new MedicalRecordsService(), new PersonsService());
+        jsonTools.parseFireStations();
+        jsonTools.parseMedicalRecords();
+        jsonTools.parsePerson();
+    }
 
     @Test
     public void addMedicalRecordTest() throws ParseException {
@@ -246,7 +261,7 @@ public class MedicalRecordsServiceTest {
 
     @Test
     public void getMedicalRecordByNameEmpty() {
-        MedicalRecord result = MedicalRecordsRepo.getMedicalRecordByName("Unknown", "Unknown");
+        MedicalRecord result = MedicalRecordsRepo.getMedicalRecordByNameAndFirstName("Unknown", "Unknown");
         assertEquals(result.toString(), new MedicalRecord().toString());
         assertTrue(result.getFirstName() == null);
     }

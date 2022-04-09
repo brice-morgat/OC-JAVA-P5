@@ -6,13 +6,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonsRepo {
-    public static List<Person> persons = new ArrayList<>();
+    private static PersonsRepo instance;
+    public static List<Person> persons;
 
+    private PersonsRepo() {
+        persons = new ArrayList<>();
+    }
+
+    public static PersonsRepo getInstance() {
+        if (instance == null) {
+            instance = new PersonsRepo();
+        }
+        return instance;
+    }
+
+    public void clearPersons() {
+        persons.clear();
+    }
+
+    /**
+     * Add Person
+     * @param person
+     * @return
+     */
     public static Person addPersons(Person person) {
         persons.add(person);
         return person;
     }
 
+    /**
+     * Modify Person
+     * @param person
+     * @return
+     */
     public static Person modifyPerson(Person person) {
         int i = 0;
         for (Person personEntity : persons) {
@@ -25,6 +51,11 @@ public class PersonsRepo {
         return null;
     }
 
+    /**
+     * Delete Person
+     * @param person
+     * @return
+     */
     public static Person deletePerson(Person person) {
         int i = 0;
         for (Person personEntity : persons) {
@@ -37,6 +68,11 @@ public class PersonsRepo {
         return null;
     }
 
+    /**
+     * Get Persons list by City
+     * @param city
+     * @return
+     */
     public static List<Person> getPersonsByCity(String city) {
         List<Person> result = new ArrayList();
         for (Person person : persons) {
@@ -47,6 +83,12 @@ public class PersonsRepo {
         return result;
     }
 
+    /**
+     * Get Person by Name or by Name and Firstname
+     * @param firstName
+     * @param lastName
+     * @return
+     */
     public static List<Person> getPersonsByName(String firstName, String lastName) {
         List<Person> result = new ArrayList();
         if (firstName != null) {
@@ -65,6 +107,11 @@ public class PersonsRepo {
         return result;
     }
 
+    /**
+     * Get Persons by addresses
+     * @param addresses
+     * @return
+     */
     public static List<Person> getPersonsByAdresses(List addresses) {
         List<Person> result = new ArrayList();
         for (Person person : persons) {
@@ -75,6 +122,11 @@ public class PersonsRepo {
         return result;
     }
 
+    /**
+     * Get Persons by address
+     * @param address
+     * @return
+     */
     public static List<Person> getPersonsByAddress(String address) {
         List<Person> result = new ArrayList();
         for (Person person : persons) {

@@ -13,6 +13,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MedicalRecordsService {
+    /**
+     * Add a medical record
+     * @param medicalRecord
+     * @return medical record added
+     */
     public JSONObject addMedicalRecord(MedicalRecord medicalRecord) throws ParseException {
         if (medicalRecord.firstName != null && medicalRecord.lastName != null && medicalRecord.birthdate != null && medicalRecord.medications != null && medicalRecord.allergies != null) {
             if (!alreadyExist(medicalRecord)) {
@@ -28,6 +33,11 @@ public class MedicalRecordsService {
         }
     }
 
+    /**
+     * Modify a medical record
+     * @param medicalRecord
+     * @return medical record's modified
+     */
     public JSONObject modifyMedicalRecord(MedicalRecord medicalRecord) throws ParseException {
         if (medicalRecord.firstName != null && medicalRecord.lastName != null && medicalRecord.birthdate != null && medicalRecord.medications != null && medicalRecord.allergies != null) {
             MedicalRecord result = MedicalRecordsRepo.modifyMedicalRecord(medicalRecord);
@@ -43,6 +53,11 @@ public class MedicalRecordsService {
         }
     }
 
+    /**
+     * Delete a medical record
+     * @param medicalRecord
+     * @return medical record deleted
+     */
     public JSONObject deleteMedicalRecord(MedicalRecord medicalRecord) throws ParseException {
         if (medicalRecord.firstName != null && medicalRecord.lastName != null) {
             MedicalRecord result = MedicalRecordsRepo.deleteMedicalRecord(medicalRecord.firstName, medicalRecord.lastName);
@@ -58,6 +73,11 @@ public class MedicalRecordsService {
         }
     }
 
+    /**
+     * Verify if a medical record already exist
+     * @param medicalRecord
+     * @return boolean
+     */
     public boolean alreadyExist(MedicalRecord medicalRecord) {
         int i = 0;
         for (MedicalRecord entity : MedicalRecordsRepo.medicalRecords) {
