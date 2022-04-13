@@ -4,7 +4,6 @@ import fr.safetynet.alerts.exceptions.AlreadyExistException;
 import fr.safetynet.alerts.exceptions.InvalidInputException;
 import fr.safetynet.alerts.exceptions.NotFoundException;
 import fr.safetynet.alerts.models.MedicalRecord;
-import fr.safetynet.alerts.repository.MedicalRecordsRepo;
 import fr.safetynet.alerts.service.MedicalRecordsService;
 import org.apache.log4j.Logger;
 import org.json.simple.JSONObject;

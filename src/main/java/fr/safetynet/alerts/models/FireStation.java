@@ -6,6 +6,6 @@ import lombok.*;
 @Setter
 @ToString
 public class FireStation {
-    public String address;
-    public Integer station;
+    private String address;
+    private Integer station;
 }

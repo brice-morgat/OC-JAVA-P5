@@ -30,7 +30,7 @@ public class MedicalRecordsRepo {
      * @param medicalRecord
      * @return
      */
-    public static MedicalRecord addMedicalRecord(MedicalRecord medicalRecord) {
+    public MedicalRecord addMedicalRecord(MedicalRecord medicalRecord) {
         medicalRecords.add(medicalRecord);
         return medicalRecord;
     }
@@ -41,7 +41,7 @@ public class MedicalRecordsRepo {
      * @param lastName
      * @return
      */
-    public static MedicalRecord deleteMedicalRecord(String firstName, String lastName) {
+    public MedicalRecord deleteMedicalRecord(String firstName, String lastName) {
         int i = 0;
         for (MedicalRecord medicalRecord : medicalRecords) {
             if (medicalRecord.getFirstName().equals(firstName) && medicalRecord.getLastName().equals(lastName)) {
@@ -58,7 +58,7 @@ public class MedicalRecordsRepo {
      * @param medicalRecord
      * @return
      */
-    public static MedicalRecord modifyMedicalRecord(MedicalRecord medicalRecord) {
+    public MedicalRecord modifyMedicalRecord(MedicalRecord medicalRecord) {
         int i = 0;
         for (MedicalRecord medicalRecordEntity : medicalRecords) {
             if (medicalRecordEntity.getFirstName().equals(medicalRecord.getFirstName()) && medicalRecordEntity.getLastName().equals(medicalRecord.getLastName())) {
@@ -76,7 +76,7 @@ public class MedicalRecordsRepo {
      * @param lastName
      * @return
      */
-    public static MedicalRecord getMedicalRecordByNameAndFirstName(String firstName, String lastName) {
+    public MedicalRecord getMedicalRecordByNameAndFirstName(String firstName, String lastName) {
         MedicalRecord medicalRecordToSearch = new MedicalRecord();
         for (MedicalRecord medicalRecord : medicalRecords) {
             if (medicalRecord.getFirstName().equals(firstName) && medicalRecord.getLastName().equals(lastName)) {

@@ -64,8 +64,8 @@ public class PersonsServiceTest {
         person.setZip(232232);
         person.setCity("Culver");
         JSONObject result = personsService.addPerson(person);
-        assertEquals(result.get("firstName"), person.firstName);
-        assertEquals(result.get("lastName"), person.lastName);
+        assertEquals(result.get("firstName"), person.getFirstName());
+        assertEquals(result.get("lastName"), person.getLastName());
     }
 
     @Test
@@ -79,8 +79,8 @@ public class PersonsServiceTest {
         person.setZip(232232);
         person.setCity("Culver");
         JSONObject result = personsService.addPerson(person);
-        assertEquals(result.get("firstName"), person.firstName);
-        assertEquals(result.get("lastName"), person.lastName);
+        assertEquals(result.get("firstName"), person.getFirstName());
+        assertEquals(result.get("lastName"), person.getLastName());
         assertThrows(AlreadyExistException.class, () -> personsService.addPerson(person));
     }
 

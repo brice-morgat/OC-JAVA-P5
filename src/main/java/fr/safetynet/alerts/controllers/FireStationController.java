@@ -14,15 +14,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.List;
-
 /**
  * FireStation Controller
  */
 @RestController
 public class FireStationController {
     private final FireStationsService fireStationsService;
-    private static Logger log = Logger.getLogger(FireStationController.class);
+    private static final Logger log = Logger.getLogger(FireStationController.class);
 
     public FireStationController(FireStationsService fireStationsService) {
         this.fireStationsService = fireStationsService;
@@ -122,6 +120,7 @@ public class FireStationController {
             log.info("Liste trouvé pour /fire?address=");
             return new ResponseEntity(response, HttpStatus.OK);
         } catch (NotFoundException e) {
+            log.error(e.getMessage());
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }
     }

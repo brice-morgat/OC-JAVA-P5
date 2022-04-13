@@ -49,10 +49,10 @@ public class FireStationsRepo {
     public List<FireStation> removeFireStation(FireStation fireStation) {
         List<FireStation> listDeletedFireStation = new ArrayList();
         int i = 0;
-        if (fireStation.station != null && fireStation.address != null) {
+        if (fireStation.getStation() != null && fireStation.getAddress() != null) {
             for (Iterator<FireStation> it = fireStations.iterator(); it.hasNext();) {
                 FireStation fireStationEntity = it.next();
-                if (fireStationEntity.getAddress().equals(fireStation.address) && fireStationEntity.getStation().equals(fireStation.station)) {
+                if (fireStationEntity.getAddress().equals(fireStation.getAddress()) && fireStationEntity.getStation().equals(fireStation.getStation())) {
                     listDeletedFireStation.add(fireStationEntity);
                     it.remove();
                 }
@@ -63,11 +63,11 @@ public class FireStationsRepo {
         } else {
             for (Iterator<FireStation> it = fireStations.iterator(); it.hasNext();) {
                 FireStation fireStationEntity = it.next();
-                if (fireStationEntity.getStation().equals(fireStation.station) && fireStation.address == null) {
+                if (fireStationEntity.getStation().equals(fireStation.getStation()) && fireStation.getAddress() == null) {
                     listDeletedFireStation.add(fireStationEntity);
                     it.remove();
                 }
-                if (fireStationEntity.getAddress().equals(fireStation.address) && fireStation.station == null) {
+                if (fireStationEntity.getAddress().equals(fireStation.getAddress()) && fireStation.getStation() == null) {
                     listDeletedFireStation.add(fireStationEntity);
                     it.remove();
                 }
@@ -87,7 +87,7 @@ public class FireStationsRepo {
     public FireStation modifyFireStations(FireStation fireStation) {
         int i = 0;
         for (FireStation fireStationEntity : fireStations) {
-            if (fireStationEntity.getAddress().equals(fireStation.address) && fireStation.station != null) {
+            if (fireStationEntity.getAddress().equals(fireStation.getAddress()) && fireStation.getStation() != null) {
                 fireStations.set(i, fireStationEntity);
                 return fireStation;
             }
@@ -119,7 +119,7 @@ public class FireStationsRepo {
         List addresses = new ArrayList();
         for (FireStation fireStation: fireStations) {
             if (fireStation.getStation().equals(station_number)) {
-                addresses.add(fireStation.address);
+                addresses.add(fireStation.getAddress());
             }
         }
         log.info(addresses);

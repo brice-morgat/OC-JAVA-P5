@@ -24,6 +24,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 public class MedicalRecordsServiceTest {
+    MedicalRecordsRepo medicalRecordsRepo = MedicalRecordsRepo.getInstance();
     @Autowired
     private MedicalRecordsService medicalRecordsService;
 
@@ -261,7 +262,7 @@ public class MedicalRecordsServiceTest {
 
     @Test
     public void getMedicalRecordByNameEmpty() {
-        MedicalRecord result = MedicalRecordsRepo.getMedicalRecordByNameAndFirstName("Unknown", "Unknown");
+        MedicalRecord result = medicalRecordsRepo.getMedicalRecordByNameAndFirstName("Unknown", "Unknown");
         assertEquals(result.toString(), new MedicalRecord().toString());
         assertTrue(result.getFirstName() == null);
     }

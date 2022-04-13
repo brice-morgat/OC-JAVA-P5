@@ -29,7 +29,7 @@ public class PersonsRepo {
      * @param person
      * @return
      */
-    public static Person addPersons(Person person) {
+    public Person addPersons(Person person) {
         persons.add(person);
         return person;
     }
@@ -39,7 +39,7 @@ public class PersonsRepo {
      * @param person
      * @return
      */
-    public static Person modifyPerson(Person person) {
+    public Person modifyPerson(Person person) {
         int i = 0;
         for (Person personEntity : persons) {
             if (personEntity.getFirstName().equals(person.getFirstName()) && personEntity.getLastName().equals(person.getLastName())) {
@@ -56,10 +56,10 @@ public class PersonsRepo {
      * @param person
      * @return
      */
-    public static Person deletePerson(Person person) {
+    public Person deletePerson(Person person) {
         int i = 0;
         for (Person personEntity : persons) {
-            if (personEntity.getFirstName().equals(person.firstName) && personEntity.getLastName().equals(person.lastName)) {
+            if (personEntity.getFirstName().equals(person.getFirstName()) && personEntity.getLastName().equals(person.getLastName())) {
                 persons.remove(i);
                 return person;
             }
@@ -73,7 +73,7 @@ public class PersonsRepo {
      * @param city
      * @return
      */
-    public static List<Person> getPersonsByCity(String city) {
+    public List<Person> getPersonsByCity(String city) {
         List<Person> result = new ArrayList();
         for (Person person : persons) {
             if (person.getCity().equals(city)) {

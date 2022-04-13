@@ -26,6 +26,7 @@ import java.util.List;
 @Service
 public class FireStationsService {
     FireStationsRepo fireStationsRepo = FireStationsRepo.getInstance();
+    MedicalRecordsRepo medicalRecordsRepo = MedicalRecordsRepo.getInstance();
 
     /**
      * Add a FireStation
@@ -34,11 +35,11 @@ public class FireStationsService {
      */
     public JSONObject addFireStation(FireStation fireStation) {
         JSONObject fireStationResult = new JSONObject();
-        if (fireStation.station != null && fireStation.address != null) {
+        if (fireStation.getStation() != null && fireStation.getAddress() != null) {
             if (!alreadyExist(fireStation)) {
                 FireStation result = fireStationsRepo.addFireStation(fireStation);
-                fireStationResult.put("station", result.station);
-                fireStationResult.put("address", result.address);
+                fireStationResult.put("station", result.getStation());
+                fireStationResult.put("address", result.getAddress());
                 return fireStationResult;
             } else {
                 throw new AlreadyExistException("La station existe déjà pour");
@@ -54,7 +55,7 @@ public class FireStationsService {
      * @return fireStation's modified
      */
     public JSONObject modifyFireStation(FireStation fireStation) throws ParseException {
-        if (fireStation.station != null && fireStation.address != null) {
+            if (fireStation.getStation() != null && fireStation.getAddress() != null) {
             FireStation result = fireStationsRepo.modifyFireStations(fireStation);
             if (result != null) {
                 JSONParser parser = new JSONParser();
@@ -113,14 +114,14 @@ public class FireStationsService {
             List<Person> persons = PersonsRepo.getPersonsByAdresses(addresses);
             for (Person person: persons) {
                 JSONObject personResult = new JSONObject();
-                MedicalRecord personMedicalRecord =  MedicalRecordsRepo.getMedicalRecordByNameAndFirstName(person.firstName, person.lastName);
-                personResult.put("firstName", person.firstName);
-                personResult.put("lastName", person.lastName);
-                personResult.put("address", person.address);
-                personResult.put("phone", person.phone);
+                MedicalRecord personMedicalRecord =  medicalRecordsRepo.getMedicalRecordByNameAndFirstName(person.getFirstName(), person.getLastName());
+                personResult.put("firstName", person.getFirstName());
+                personResult.put("lastName", person.getLastName());
+                personResult.put("address", person.getAddress());
+                personResult.put("phone", person.getPhone());
                 int age = 100;
                 if (personMedicalRecord.getFirstName() != null) {
-                    age = CalculTools.ageParser(personMedicalRecord.birthdate);
+                    age = CalculTools.ageParser(personMedicalRecord.getBirthdate());
                 }
                 if (age >= 18) {
                     adults++;
@@ -153,18 +154,18 @@ public class FireStationsService {
             response.put("persons", persons);
             for (Person person : personList) {
                 JSONObject entity = new JSONObject();
-                MedicalRecord personMedicalRecord =  MedicalRecordsRepo.getMedicalRecordByNameAndFirstName(person.firstName, person.lastName);
-                entity.put("firstName", person.firstName);
-                entity.put("lastName", person.lastName);
-                entity.put("address", person.address);
-                entity.put("phone", person.phone);
+                MedicalRecord personMedicalRecord =  medicalRecordsRepo.getMedicalRecordByNameAndFirstName(person.getFirstName(), person.getLastName());
+                entity.put("firstName", person.getFirstName());
+                entity.put("lastName", person.getLastName());
+                entity.put("address", person.getAddress());
+                entity.put("phone", person.getPhone());
                 int age = 100;
                 if (personMedicalRecord.getFirstName() != null) {
-                    age = CalculTools.ageParser(personMedicalRecord.birthdate);
+                    age = CalculTools.ageParser(personMedicalRecord.getBirthdate());
                 }
                 entity.put("age", age);
-                entity.put("medications", personMedicalRecord.medications);
-                entity.put("allergies", personMedicalRecord.allergies);
+                entity.put("medications", personMedicalRecord.getMedications());
+                entity.put("allergies", personMedicalRecord.getAllergies());
                 persons.add(entity);
             }
             return response;
@@ -184,8 +185,8 @@ public class FireStationsService {
         if (!addresses.isEmpty()) {
             List<Person> persons = PersonsRepo.getPersonsByAdresses(addresses);
             for (Person person: persons) {
-                if (!phoneList.contains(person.phone))
-                    phoneList.add(person.phone);
+                if (!phoneList.contains(person.getPhone()))
+                    phoneList.add(person.getPhone());
             }
             return phoneList;
         } else {
@@ -213,18 +214,18 @@ public class FireStationsService {
                         List<Person> personList = PersonsRepo.getPersonsByAddress(address);
                         for (Person person : personList) {
                             JSONObject entity = new JSONObject();
-                            MedicalRecord personMedicalRecord =  MedicalRecordsRepo.getMedicalRecordByNameAndFirstName(person.firstName, person.lastName);
-                            entity.put("firstName", person.firstName);
-                            entity.put("lastName", person.lastName);
-                            entity.put("address", person.address);
-                            entity.put("phone", person.phone);
+                            MedicalRecord personMedicalRecord =  medicalRecordsRepo.getMedicalRecordByNameAndFirstName(person.getFirstName(), person.getLastName());
+                            entity.put("firstName", person.getFirstName());
+                            entity.put("lastName", person.getLastName());
+                            entity.put("address", person.getAddress());
+                            entity.put("phone", person.getPhone());
                             int age = 100;
                             if (personMedicalRecord.getFirstName() != null) {
-                                age = CalculTools.ageParser(personMedicalRecord.birthdate);
+                                age = CalculTools.ageParser(personMedicalRecord.getBirthdate());
                             }
                             entity.put("age", age);
-                            entity.put("medications", personMedicalRecord.medications);
-                            entity.put("allergies", personMedicalRecord.allergies);
+                            entity.put("medications", personMedicalRecord.getMedications());
+                            entity.put("allergies", personMedicalRecord.getAllergies());
                             personsArray.add(entity);
                         }
                         response.put(address, personsArray);
@@ -251,7 +252,7 @@ public class FireStationsService {
     public boolean alreadyExist(FireStation fireStation) {
         int i = 0;
         for (FireStation entity : fireStationsRepo.getFireStations()) {
-            if (entity.getAddress().equals(fireStation.address) && entity.getStation().equals(fireStation.station)) {
+            if (entity.getAddress().equals(fireStation.getAddress()) && entity.getStation().equals(fireStation.getStation())) {
                 return true;
             }
             i++;

@@ -13,15 +13,17 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MedicalRecordsService {
+    MedicalRecordsRepo medicalRecordsRepo = MedicalRecordsRepo.getInstance();
+
     /**
      * Add a medical record
      * @param medicalRecord
      * @return medical record added
      */
     public JSONObject addMedicalRecord(MedicalRecord medicalRecord) throws ParseException {
-        if (medicalRecord.firstName != null && medicalRecord.lastName != null && medicalRecord.birthdate != null && medicalRecord.medications != null && medicalRecord.allergies != null) {
+        if (medicalRecord.getFirstName() != null && medicalRecord.getLastName() != null && medicalRecord.getBirthdate() != null && medicalRecord.getMedications() != null && medicalRecord.getAllergies() != null) {
             if (!alreadyExist(medicalRecord)) {
-                MedicalRecord result = MedicalRecordsRepo.addMedicalRecord(medicalRecord);
+                MedicalRecord result = medicalRecordsRepo.addMedicalRecord(medicalRecord);
                 JSONParser parser = new JSONParser();
                 JSONObject medicalRecordResult = (JSONObject) parser.parse(JsonStream.serialize(result));
                 return medicalRecordResult;
@@ -39,8 +41,8 @@ public class MedicalRecordsService {
      * @return medical record's modified
      */
     public JSONObject modifyMedicalRecord(MedicalRecord medicalRecord) throws ParseException {
-        if (medicalRecord.firstName != null && medicalRecord.lastName != null && medicalRecord.birthdate != null && medicalRecord.medications != null && medicalRecord.allergies != null) {
-            MedicalRecord result = MedicalRecordsRepo.modifyMedicalRecord(medicalRecord);
+        if (medicalRecord.getFirstName() != null && medicalRecord.getLastName() != null && medicalRecord.getBirthdate() != null && medicalRecord.getMedications() != null && medicalRecord.getAllergies() != null) {
+            MedicalRecord result = medicalRecordsRepo.modifyMedicalRecord(medicalRecord);
             if (result != null) {
                 JSONParser parser = new JSONParser();
                 JSONObject medicalRecordResult = (JSONObject) parser.parse(JsonStream.serialize(result));
@@ -59,8 +61,8 @@ public class MedicalRecordsService {
      * @return medical record deleted
      */
     public JSONObject deleteMedicalRecord(MedicalRecord medicalRecord) throws ParseException {
-        if (medicalRecord.firstName != null && medicalRecord.lastName != null) {
-            MedicalRecord result = MedicalRecordsRepo.deleteMedicalRecord(medicalRecord.firstName, medicalRecord.lastName);
+        if (medicalRecord.getFirstName() != null && medicalRecord.getLastName() != null) {
+            MedicalRecord result = medicalRecordsRepo.deleteMedicalRecord(medicalRecord.getFirstName(), medicalRecord.getLastName());
             if (result != null) {
                 JSONParser parser = new JSONParser();
                 JSONObject medicalRecordResult = (JSONObject) parser.parse(JsonStream.serialize(result));
@@ -81,7 +83,7 @@ public class MedicalRecordsService {
     public boolean alreadyExist(MedicalRecord medicalRecord) {
         int i = 0;
         for (MedicalRecord entity : MedicalRecordsRepo.medicalRecords) {
-            if (entity.getFirstName().equals(medicalRecord.firstName) && entity.getLastName().equals(medicalRecord.lastName)) {
+            if (entity.getFirstName().equals(medicalRecord.getFirstName()) && entity.getLastName().equals(medicalRecord.getLastName())) {
                 return true;
             }
             i++;

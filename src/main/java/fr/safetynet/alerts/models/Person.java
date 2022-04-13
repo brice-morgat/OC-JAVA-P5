@@ -9,17 +9,17 @@ import lombok.ToString;
 @Getter
 @ToString
 public class Person {
-    public String firstName;
+    private String firstName;
 
-    public String lastName;
+    private String lastName;
 
-    public String email;
+    private String email;
 
-    public String city;
+    private String city;
 
-    public Integer zip;
+    private Integer zip;
 
-    public String address;
+    private String address;
 
-    public String phone;
+    private String phone;
 }
