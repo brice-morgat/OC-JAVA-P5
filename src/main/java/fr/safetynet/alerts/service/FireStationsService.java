@@ -27,6 +27,7 @@ import java.util.List;
 public class FireStationsService {
     FireStationsRepo fireStationsRepo = FireStationsRepo.getInstance();
     MedicalRecordsRepo medicalRecordsRepo = MedicalRecordsRepo.getInstance();
+    PersonsRepo personsRepo = PersonsRepo.getInstance();
 
     /**
      * Add a FireStation
@@ -111,7 +112,7 @@ public class FireStationsService {
         int child = 0;
         List addresses = fireStationsRepo.getListAddressByStationNumber(station);
         if (!addresses.isEmpty()) {
-            List<Person> persons = PersonsRepo.getPersonsByAdresses(addresses);
+            List<Person> persons = personsRepo.getPersonsByAdresses(addresses);
             for (Person person: persons) {
                 JSONObject personResult = new JSONObject();
                 MedicalRecord personMedicalRecord =  medicalRecordsRepo.getMedicalRecordByNameAndFirstName(person.getFirstName(), person.getLastName());
@@ -149,7 +150,7 @@ public class FireStationsService {
         JSONArray persons = new JSONArray();
         int stationNumber = fireStationsRepo.getFireStationNumberByAddress(address);
         if (stationNumber != 0) {
-            List<Person> personList = PersonsRepo.getPersonsByAddress(address);
+            List<Person> personList = personsRepo.getPersonsByAddress(address);
             response.put("station", stationNumber);
             response.put("persons", persons);
             for (Person person : personList) {
@@ -183,7 +184,7 @@ public class FireStationsService {
         JSONArray phoneList = new JSONArray();
         List addresses = fireStationsRepo.getListAddressByStationNumber(station);
         if (!addresses.isEmpty()) {
-            List<Person> persons = PersonsRepo.getPersonsByAdresses(addresses);
+            List<Person> persons = personsRepo.getPersonsByAdresses(addresses);
             for (Person person: persons) {
                 if (!phoneList.contains(person.getPhone()))
                     phoneList.add(person.getPhone());
@@ -211,7 +212,7 @@ public class FireStationsService {
                 for (String address : addresses) {
                     JSONArray personsArray = new JSONArray();
                     if (response.get(address) == null) {
-                        List<Person> personList = PersonsRepo.getPersonsByAddress(address);
+                        List<Person> personList = personsRepo.getPersonsByAddress(address);
                         for (Person person : personList) {
                             JSONObject entity = new JSONObject();
                             MedicalRecord personMedicalRecord =  medicalRecordsRepo.getMedicalRecordByNameAndFirstName(person.getFirstName(), person.getLastName());

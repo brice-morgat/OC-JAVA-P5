@@ -94,7 +94,7 @@ public class PersonsService {
      */
     public JSONArray getPersonsInfo(String firstName, String lastName) {
         JSONArray response = new JSONArray();
-        List<Person> persons = PersonsRepo.getPersonsByName(firstName, lastName);
+        List<Person> persons = personsRepo.getPersonsByName(firstName, lastName);
         if (!persons.isEmpty()) {
             for (Person person: persons) {
                 JSONObject personResult = new JSONObject();
@@ -151,7 +151,7 @@ public class PersonsService {
         JSONArray children = new JSONArray();
         int child = 0;
 
-        List<Person> personList = PersonsRepo.getPersonsByAddress(address);
+        List<Person> personList = personsRepo.getPersonsByAddress(address);
         if (!personList.isEmpty()) {
             for (Person person : personList) {
                 JSONObject entity = new JSONObject();

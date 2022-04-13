@@ -89,7 +89,7 @@ public class PersonsRepo {
      * @param lastName
      * @return
      */
-    public static List<Person> getPersonsByName(String firstName, String lastName) {
+    public List<Person> getPersonsByName(String firstName, String lastName) {
         List<Person> result = new ArrayList();
         if (firstName != null) {
             for (Person person : persons) {
@@ -112,7 +112,7 @@ public class PersonsRepo {
      * @param addresses
      * @return
      */
-    public static List<Person> getPersonsByAdresses(List addresses) {
+    public List<Person> getPersonsByAdresses(List addresses) {
         List<Person> result = new ArrayList();
         for (Person person : persons) {
             if (addresses.contains(person.getAddress())) {
@@ -127,7 +127,7 @@ public class PersonsRepo {
      * @param address
      * @return
      */
-    public static List<Person> getPersonsByAddress(String address) {
+    public List<Person> getPersonsByAddress(String address) {
         List<Person> result = new ArrayList();
         for (Person person : persons) {
             if (person.getAddress().equals(address)) {
