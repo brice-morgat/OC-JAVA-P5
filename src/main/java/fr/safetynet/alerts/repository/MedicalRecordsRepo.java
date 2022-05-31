@@ -2,6 +2,7 @@ package fr.safetynet.alerts.repository;
 
 import fr.safetynet.alerts.models.MedicalRecord;
 import fr.safetynet.alerts.models.Person;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;

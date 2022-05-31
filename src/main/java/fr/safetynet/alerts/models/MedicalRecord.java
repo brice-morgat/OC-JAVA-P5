@@ -16,5 +16,4 @@ public class MedicalRecord {
 
     private List<String> medications;
     private List<String> allergies;
-
 }

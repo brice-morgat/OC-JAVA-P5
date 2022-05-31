@@ -25,9 +25,9 @@ import java.util.List;
  */
 @Service
 public class FireStationsService {
-    FireStationsRepo fireStationsRepo = FireStationsRepo.getInstance();
-    MedicalRecordsRepo medicalRecordsRepo = MedicalRecordsRepo.getInstance();
-    PersonsRepo personsRepo = PersonsRepo.getInstance();
+    private FireStationsRepo fireStationsRepo = FireStationsRepo.getInstance();
+    private MedicalRecordsRepo medicalRecordsRepo = MedicalRecordsRepo.getInstance();
+    private PersonsRepo personsRepo = PersonsRepo.getInstance();
 
     /**
      * Add a FireStation

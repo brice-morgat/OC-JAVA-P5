@@ -20,7 +20,8 @@ import org.springframework.web.server.ResponseStatusException;
 @RestController
 public class FireStationController {
     private final FireStationsService fireStationsService;
-    private static final Logger log = Logger.getLogger(FireStationController.class);
+    private final Logger log = Logger.getLogger(FireStationController.class);
+
 
     public FireStationController(FireStationsService fireStationsService) {
         this.fireStationsService = fireStationsService;

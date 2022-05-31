@@ -18,8 +18,8 @@ import org.springframework.web.server.ResponseStatusException;
  */
 @RestController
 public class MedicalRecordController {
-    private final MedicalRecordsService medicalRecordsService;
-    private static Logger log = Logger.getLogger(MedicalRecordController.class);
+    private MedicalRecordsService medicalRecordsService;
+    private final Logger log = Logger.getLogger(MedicalRecordController.class);
 
 
     public MedicalRecordController(MedicalRecordsService medicalRecordsService) {
